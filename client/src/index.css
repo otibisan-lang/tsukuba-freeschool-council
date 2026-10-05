@@ -97,3 +97,6 @@ body{
 
 .lecturer-intro{margin:20px 0 14px;padding:26px 30px;line-height:1.9}.lecturer-intro p{margin:0}.lecturer-note{font-size:14px;color:var(--muted);margin:0 0 8px}
 .lecturer-actions{display:flex;flex-wrap:wrap;gap:12px}
+.keyword-filter{display:flex;flex-wrap:wrap;gap:8px;margin:24px 0 0}.keyword-chip{border:1px solid #cfe0d6;background:#fff;border-radius:999px;padding:6px 14px;font-size:13px;color:var(--muted);cursor:pointer;font-family:inherit}.keyword-chip:hover{border-color:#d9b24a}.keyword-chip.active{background:#fff0c5;border-color:#d9b24a;color:#7a5a16;font-weight:700}.keyword-count{font-size:13px;color:var(--muted);margin:14px 0 0}
+.lecturer-actions .button-outline{display:inline-flex;align-items:center;justify-content:center;background:#fff;color:var(--coral);border:2px solid var(--coral);border-radius:999px;padding:12px 28px;font-weight:700;text-decoration:none}.lecturer-actions .button-outline:hover{background:var(--coral);color:#fff}
+.external-action{display:flex;align-items:center;gap:12px;flex-wrap:wrap}.external-action small{font-size:13px;color:var(--muted)}

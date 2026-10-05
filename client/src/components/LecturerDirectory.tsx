@@ -106,6 +106,7 @@ type Status = "loading" | "ready" | "empty" | "unconfigured" | "error";
 export default function LecturerDirectory() {
   const [status, setStatus] = useState<Status>(SHEET_CSV_URL ? "loading" : "unconfigured");
   const [lecturers, setLecturers] = useState<Lecturer[]>([]);
+  const [keyword, setKeyword] = useState<string | null>(null);
 
   useEffect(() => {
     if (!SHEET_CSV_URL) return;
@@ -141,9 +142,54 @@ export default function LecturerDirectory() {
     );
   }
 
+  // キーワードは「、」「,」「/」「空白」で区切って、1つずつボタンにする
+  const splitKeywords = (text: string) =>
+    text.split(/[、,，/／\s]+/).map((k) => k.trim()).filter((k) => k !== "");
+
+  const keywordCounts = new Map<string, number>();
+  lecturers.forEach((l) =>
+    splitKeywords(l.keyword).forEach((k) => keywordCounts.set(k, (keywordCounts.get(k) || 0) + 1)),
+  );
+  const keywordList = Array.from(keywordCounts.entries())
+    .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ja"))
+    .map(([k]) => k);
+  const filtered = keyword
+    ? lecturers.filter((l) => splitKeywords(l.keyword).includes(keyword))
+    : lecturers;
+
   return (
+    <>
+      {keywordList.length > 0 && (
+        <div className="keyword-filter" role="group" aria-label="キーワードで絞り込む">
+          <button
+            type="button"
+            className={`keyword-chip${keyword === null ? " active" : ""}`}
+            onClick={() => setKeyword(null)}
+          >
+            すべて
+          </button>
+          {keywordList.map((k) => (
+            <button
+              key={k}
+              type="button"
+              className={`keyword-chip${keyword === k ? " active" : ""}`}
+              onClick={() => setKeyword(keyword === k ? null : k)}
+            >
+              {k}
+            </button>
+          ))}
+        </div>
+      )}
+      <p className="keyword-count">
+        {keyword
+          ? `「${keyword}」の講師は${filtered.length}人です(掲載中は全${lecturers.length}人)`
+          : `掲載中の講師は${lecturers.length}人です`}
+      </p>
+      {filtered.length === 0 ? (
+        <div className="notice-card">「{keyword}」に該当する講師はいません。</div>
+      ) : (
     <div className="lecturer-grid">
-      {lecturers.map((l, i) => (
+      {filtered.map((l, i) => (
         <article className="lecturer-card" key={`${l.name}-${i}`}>
           <div className="lecturer-head">
             <span className="lecturer-avatar" aria-hidden="true">{l.name.charAt(0)}</span>
@@ -172,5 +218,7 @@ export default function LecturerDirectory() {
         </article>
       ))}
     </div>
+      )}
+    </>
   );
 }
