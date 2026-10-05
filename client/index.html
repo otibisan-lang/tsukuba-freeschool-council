@@ -18,6 +18,11 @@
   <body>
     <div id="root"></div>
     <script type="module" src="/src/main.tsx"></script>
+    <script>
+      window.addEventListener("scroll", function () {
+        document.documentElement.classList.toggle("is-scrolled", window.scrollY > 30);
+      }, { passive: true });
+    </script>
   </body>
 
 </html>
