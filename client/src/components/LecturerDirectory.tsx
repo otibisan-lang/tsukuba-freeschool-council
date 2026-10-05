@@ -183,7 +183,7 @@ export default function LecturerDirectory() {
       <p className="keyword-count">
         {keyword
           ? `「${keyword}」の講師は${filtered.length}人です(掲載中は全${lecturers.length}人)`
-          : `掲載中の講師は${lecturers.length}人です`}
+          : `現在、掲載中の講師は${lecturers.length}人です`}
       </p>
       {filtered.length === 0 ? (
         <div className="notice-card">「{keyword}」に該当する講師はいません。</div>

@@ -103,8 +103,32 @@ body{
 
 /* トップの空: パンフレットの空の青(上 #17A5F7 → 下 #9ED8F9)に合わせたグラデーション */
 .hero{isolation:isolate}
-.hero::before{content:"";position:absolute;top:0;bottom:0;left:50%;width:100vw;transform:translateX(-50%);background:linear-gradient(180deg,#17A5F7 0%,#2BACF7 10%,#3FB4F7 20%,#51BAF9 30%,#65C2F9 40%,#79CAF9 50%,#8DD1FA 60%,#9ED8F9 70%,#EAF8FC 100%);z-index:-1}
+
 .hero .eyebrow,.hero h1,.hero h1 em,.hero .hero-lead{color:#fff}
 .hero h1 em:after{background:#FFD54F}
 .hero-child{display:block;width:min(420px,90%);height:auto;margin:0 auto;filter:drop-shadow(0 14px 22px rgba(15,80,120,.25))}
 @media(max-width:800px){.hero-child{width:260px}}
+
+.header-actions{display:flex;gap:10px;align-items:center}
+.header-cta-outline{background:#fff;color:#FF7F0E;border:2px solid #FF7F0E}
+.header-cta-outline:hover{background:#FF7F0E;color:#fff}
+.nav-only-mobile{display:none}
+@media(max-width:800px){.site-header .header-actions{display:none}.nav-only-mobile{display:block}}
+
+/* トップ: 空と雲は画面に固定し、コンテンツだけがスクロールする */
+.sky-page{background:none}
+.sky-fixed{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:url(/assets/whitecloud.png),url(/assets/whitecloud.png),linear-gradient(180deg,#17A5F7 0%,#2BACF7 10%,#3FB4F7 20%,#51BAF9 30%,#65C2F9 40%,#79CAF9 50%,#8DD1FA 60%,#9ED8F9 70%,#EAF8FC 100%);background-repeat:no-repeat,no-repeat,no-repeat;background-position:right -260px top 4%,left -170px top 40%,center;background-size:520px auto,340px auto,100% 100%}
+/* ヘッダーも青に */
+.sky-page .site-header{background:linear-gradient(90deg,#17A5F7,#2BACF7);border-bottom:none;box-shadow:0 6px 18px rgba(14,100,160,.18)}
+.sky-page .site-header .brand b,.sky-page .site-header .brand small,.sky-page .site-header nav a{color:#fff}
+.sky-page .site-header nav a:hover{color:#FFD54F}
+.sky-page .mobile-toggle{color:#fff}
+@media(max-width:800px){.sky-page .site-header nav{background:#1a9be6}.sky-page .site-header nav a{border-bottom-color:rgba(255,255,255,.25)}}
+.sky-page .site-header{position:fixed;top:0;left:0;right:0}
+.sky-page main{padding-top:88px}
+@media(max-width:800px){.sky-page main{padding-top:72px}}
+
+/* トップの「過去のたより」リンクを、目立つボタン風にする */
+.letter-section .archive-link{display:flex;align-items:center;justify-content:center;gap:10px;width:max-content;max-width:100%;margin:30px auto 0;padding:15px 30px;border:2px solid #FF7F0E;border-radius:999px;background:#fff;color:#FF7F0E;font-size:16px;font-weight:700;box-shadow:0 8px 20px rgba(255,127,14,.18);transition:background .2s,color .2s,transform .2s}
+.letter-section .archive-link span{font-size:20px;margin-left:0}
+.letter-section .archive-link:hover{background:#FF7F0E;color:#fff;transform:translateY(-2px)}
