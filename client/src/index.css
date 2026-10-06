@@ -176,3 +176,4 @@ body{
 @media(max-width:800px){.sky-page .simple-content{padding:28px 22px 40px;margin-bottom:40px;border-radius:18px}}
 .doc-actions{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 0}.doc-actions .button-outline{background:#fff}
 .lecturer-styles{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.lecturer-styles .lecturer-style{margin:0}
+.school-card{cursor:pointer;color:inherit}.school-go{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#FF7F0E;color:#fff}
