@@ -230,7 +230,7 @@ body{
 .side-art-wrap .lecturer-intro{margin:0}
 .side-art{display:block;width:200px;height:auto}
 @media(max-width:800px){.side-art-wrap{grid-template-columns:minmax(0,1fr)}.side-art{order:-1;width:160px;margin:0 auto}}
-.about-art{display:block;width:min(420px,90%);height:auto;margin:8px auto 24px}
+.about-art{display:block;width:min(294px,63%);height:auto;margin:8px auto 24px}
 
 /* スマホのメニュー: 寄附・会員登録を横並びのボタンに */
 .nav-cta-mobile{display:none}
@@ -246,4 +246,6 @@ body{
 .letter-list li{font-size:15px;font-weight:700;color:#111;line-height:1.9}
 .letter-note{font-size:14px;color:#111;margin:0 0 16px;line-height:1.8}
 .letter-btn{background:#fff;font-size:14px;padding:11px 22px}
-.letter-section .archive-link.pickup-cta{background:#FF7F0E;border-color:#FF7F0E;color:#fff;box-shadow:0 10px 22px rgba(255,127,14,.35)}.letter-section .archive-link.pickup-cta:hover{background:#e96f05;border-color:#e96f05;color:#fff}
+
+/* 本文中のリンク: 点線の下線で、リンクだと分かるようにする */
+main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:4px}
