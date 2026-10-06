@@ -156,3 +156,8 @@ body{
 .is-scrolled .sky-page .brand-logo{width:40px;height:40px}
 .is-scrolled .sky-page .brand b{font-size:13px}
 @media(max-width:800px){.is-scrolled .sky-page .site-header{height:58px}.is-scrolled .sky-page .brand-logo{width:30px;height:30px}}
+
+/* トップのたより見出しの強調部分を白に */
+.letter-section .section-heading h2 em{color:#fff}
+.lecturer-avatar{object-fit:cover}img.lecturer-avatar{display:block;padding:0}
+.pledge-note{font-size:12px;line-height:1.8;color:#111;margin-top:40px}

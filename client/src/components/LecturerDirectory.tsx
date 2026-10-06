@@ -15,6 +15,7 @@ interface Lecturer {
   contact: string;
   siteUrl: string;
   pdfUrl: string;
+  iconUrl: string;
 }
 
 // ダブルクォート内のカンマ・改行に対応した簡易CSVパーサー
@@ -78,6 +79,8 @@ function parseLecturers(csvText: string): Lecturer[] {
     siteUrl: findColumn(header, "サイトURL"),
     // 管理者が手動で入力する「掲載用PDFファイル名」(public/lecturer-pdfs/ 内のファイル名)
     pdf: findColumn(header, "掲載用PDF"),
+    // 管理者が手動で入力する「掲載用アイコンファイル名」(public/lecturer-icons/ 内のファイル名、任意)
+    icon: findColumn(header, "掲載用アイコン"),
     approved: findColumn(header, "承認"),
   };
   // 承認列がまだ無いシートでは、誰も掲載されないようにする
@@ -97,6 +100,7 @@ function parseLecturers(csvText: string): Lecturer[] {
       contact: get(r, col.contact),
       siteUrl: get(r, col.siteUrl),
       pdfUrl: get(r, col.pdf) ? `/lecturer-pdfs/${encodeURIComponent(get(r, col.pdf))}` : "",
+      iconUrl: get(r, col.icon) ? `/lecturer-icons/${encodeURIComponent(get(r, col.icon))}` : "",
     }))
     .filter((l) => l.name !== "");
 }
@@ -192,7 +196,11 @@ export default function LecturerDirectory() {
       {filtered.map((l, i) => (
         <article className="lecturer-card" key={`${l.name}-${i}`}>
           <div className="lecturer-head">
-            <span className="lecturer-avatar" aria-hidden="true">{l.name.charAt(0)}</span>
+            {l.iconUrl ? (
+              <img className="lecturer-avatar" src={l.iconUrl} alt={`${l.name}さん`} />
+            ) : (
+              <span className="lecturer-avatar" aria-hidden="true">{l.name.charAt(0)}</span>
+            )}
             <div>
               <h3>{l.name}さん</h3>
               {l.title && <p className="lecturer-title">{l.title}</p>}
@@ -200,9 +208,9 @@ export default function LecturerDirectory() {
           </div>
           {l.keyword && <span className="lecturer-keyword">{l.keyword}</span>}
           {l.target && <p className="lecturer-target">対象：{l.target}</p>}
-          {l.bio && <p className="lecturer-bio">{l.bio}</p>}
           {l.style && <span className="lecturer-style">{l.style}</span>}
-          <div className="lecturer-links">
+          {l.bio && <p className="lecturer-bio">{l.bio}</p>}
+                    <div className="lecturer-links">
             {l.contact && <span className="lecturer-contact">申込先：{l.contact}</span>}
             {l.siteUrl && (
               <a className="lecturer-pdf" href={l.siteUrl} target="_blank" rel="noreferrer">
