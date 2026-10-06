@@ -152,10 +152,10 @@ body{
 
 /* スクロールすると、上のバーを少し低くする */
 .sky-page .site-header{transition:height .25s,box-shadow .25s}
-.is-scrolled .sky-page .site-header{height:66px;box-shadow:0 4px 14px rgba(14,100,160,.22)}
-.is-scrolled .sky-page .brand-logo{width:40px;height:40px}
+.is-scrolled .sky-page .site-header{height:53px;box-shadow:0 4px 14px rgba(14,100,160,.22)}
+.is-scrolled .sky-page .brand-logo{width:30px;height:30px}
 .is-scrolled .sky-page .brand b{font-size:13px}
-@media(max-width:800px){.is-scrolled .sky-page .site-header{height:58px}.is-scrolled .sky-page .brand-logo{width:30px;height:30px}}
+@media(max-width:800px){.is-scrolled .sky-page .site-header{height:46px}.is-scrolled .sky-page .brand-logo{width:24px;height:24px}}
 
 /* トップのたより見出しの強調部分を白に */
 .letter-section .section-heading h2 em{color:#fff}
@@ -177,3 +177,73 @@ body{
 .doc-actions{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 0}.doc-actions .button-outline{background:#fff}
 .lecturer-styles{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.lecturer-styles .lecturer-style{margin:0}
 .school-card{cursor:pointer;color:inherit}.school-go{margin-left:auto;display:inline-flex;align-items:center;justify-content:center;width:28px;height:28px;border-radius:50%;background:#FF7F0E;color:#fff}
+.filter-label{align-self:center;font-size:13px;font-weight:700;color:#111;margin-right:4px}
+.button-outline{display:inline-flex;align-items:center;justify-content:center;gap:10px;background:#fff;color:#FF7F0E;border:2px solid #FF7F0E;border-radius:999px;padding:12px 26px;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s,color .2s}.button-outline:hover{background:#FF7F0E;color:#fff}
+
+/* 協議会とは: 読みやすさの調整 */
+.about-lead{font-size:17px;line-height:2;color:#111;margin:0 0 28px}
+.sky-page main .simple-content h2{border-left:5px solid #FF7F0E;padding-left:14px;line-height:1.4;margin-top:48px}
+.value-list{display:grid;gap:16px;margin:20px 0 8px}
+.value-item{display:flex;gap:16px;align-items:flex-start;background:#FFF7D7;border-radius:16px;padding:18px 20px}
+.value-icon{flex:none;width:44px;height:44px;border-radius:50%;background:#FF7F0E;color:#fff;display:grid;place-items:center}
+.value-item h3{font-size:17px;margin:2px 0 6px;line-height:1.5}
+.value-item p{margin:0;font-size:14px;line-height:1.9}
+.check-list{list-style:none;padding:0;margin:16px 0 8px}
+.check-list li{position:relative;padding:8px 0 8px 28px;line-height:1.9;border-bottom:1px dashed #cfe3ee}
+.check-list li:last-child{border-bottom:0}
+.check-list li::before{content:"";position:absolute;left:4px;top:17px;width:10px;height:10px;border-radius:50%;background:#2F9BE0}
+.check-list li{font-size:13px;line-height:1.8}
+
+/* 保護者の方へ: 読みやすさの調整 */
+.parents-lead{font-size:20px;font-weight:700;color:#111;line-height:1.7;margin:0 0 18px}
+.parents-intro{background:#fff;border-radius:16px;padding:20px 24px;margin:0 0 26px}
+.parents-intro p{font-size:14px;line-height:2;margin:0 0 12px;color:#111}
+.parents-intro p:last-child{margin-bottom:0}
+.support-grid{gap:20px}
+.support-card{background:#fff;border:1px solid #d6e9f1;box-shadow:0 10px 24px rgba(14,100,160,.10);display:flex;flex-direction:column}
+.support-card.blue{background:#f3fbfe}.support-card.peach{background:#fff5ef;border-color:#f7d9c8}
+.support-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:12px}
+.support-icon{width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:#2F9BE0;color:#fff}
+.support-card.peach .support-icon{background:#FF7F0E}
+.support-no{font:700 13px 'DM Sans';color:#8a9aa3;letter-spacing:.08em}
+.support-card h2{font-size:19px;line-height:1.5;margin:0 0 12px}
+.support-card p{font-size:14px;line-height:1.9;color:#111;margin:0 0 10px}
+.support-card .check-list{margin:6px 0 16px}
+.support-card .button-outline{margin-top:auto;align-self:flex-start}
+@media(max-width:800px){.parents-lead{font-size:18px}.parents-intro{padding:18px 18px}}
+
+/* ヘッダー: 英語の表記を消し、スクロール時は寄附・会員登録を囲みなしの文字に */
+.is-scrolled .sky-page .brand small{display:none}
+.is-scrolled .sky-page .header-actions{gap:20px}
+.is-scrolled .sky-page .header-actions .header-cta,.is-scrolled .sky-page .header-actions .header-cta-outline{background:none;color:#fff;border:0;box-shadow:none;padding:6px 0;font-size:13px;border-radius:0}
+.is-scrolled .sky-page .header-actions .header-cta:hover,.is-scrolled .sky-page .header-actions .header-cta-outline:hover{background:none;color:#FFD54F;transform:none}
+
+/* イラストの配置 */
+.parents-intro-wrap{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:24px;align-items:center;margin:0 0 26px}
+.parents-intro-wrap .parents-intro{margin:0}
+.parents-art{display:block;width:210px;height:auto}
+.join-art{display:block;width:min(400px,90%);height:auto;margin:0 auto 24px}
+@media(max-width:800px){.parents-intro-wrap{grid-template-columns:minmax(0,1fr)}.parents-art{order:-1;width:170px;margin:0 auto}}
+
+/* 出張講師: 黄色いカードの横にイラスト */
+.side-art-wrap{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:24px;align-items:center;margin:20px 0 14px}
+.side-art-wrap .lecturer-intro{margin:0}
+.side-art{display:block;width:200px;height:auto}
+@media(max-width:800px){.side-art-wrap{grid-template-columns:minmax(0,1fr)}.side-art{order:-1;width:160px;margin:0 auto}}
+.about-art{display:block;width:min(420px,90%);height:auto;margin:8px auto 24px}
+
+/* スマホのメニュー: 寄附・会員登録を横並びのボタンに */
+.nav-cta-mobile{display:none}
+@media(max-width:800px){
+.nav-cta-mobile{display:flex;gap:10px;margin-top:18px;padding:4px 0 8px}
+.site-header nav .nav-cta-mobile .header-cta{display:inline-flex;flex:1;align-items:center;justify-content:center;padding:8px 14px;line-height:1.4;border:2px solid #FF7F0E;border-radius:999px;background:#FF7F0E;color:#fff;font-size:14px;font-weight:700;border-bottom:2px solid #FF7F0E}
+.site-header nav .nav-cta-mobile .header-cta-outline{background:#fff;color:#FF7F0E}
+}
+.letter-points{display:flex;flex-wrap:wrap;gap:10px;margin:12px 0 0}.letter-points span{background:#fff;border:1px solid #b88b2e;border-radius:999px;padding:8px 16px;font-size:14px;font-weight:700;color:#8f6c23}
+
+/* たより: 内容を箇条書きに、バックナンバーをボタンに */
+.letter-list{list-style:none;padding:0;margin:14px 0 6px}
+.letter-list li{font-size:15px;font-weight:700;color:#111;line-height:1.9}
+.letter-note{font-size:14px;color:#111;margin:0 0 16px;line-height:1.8}
+.letter-btn{background:#fff;font-size:14px;padding:11px 22px}
+.letter-section .archive-link.pickup-cta{background:#FF7F0E;border-color:#FF7F0E;color:#fff;box-shadow:0 10px 22px rgba(255,127,14,.35)}.letter-section .archive-link.pickup-cta:hover{background:#e96f05;border-color:#e96f05;color:#fff}

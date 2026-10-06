@@ -201,7 +201,8 @@ export default function LecturerDirectory() {
   return (
     <>
       {styleList.length > 0 && (
-        <div className="keyword-filter" role="group" aria-label="活動形態で絞り込む">
+        <div className="keyword-filter" role="group" aria-label="出張先で絞り込む">
+          <span className="filter-label">出張先：</span>
           <button
             type="button"
             className={`keyword-chip${styleFilter === null ? " active" : ""}`}
@@ -223,6 +224,7 @@ export default function LecturerDirectory() {
       )}
       {keywordList.length > 0 && (
         <div className="keyword-filter" role="group" aria-label="キーワードで絞り込む">
+          <span className="filter-label">キーワード：</span>
           <button
             type="button"
             className={`keyword-chip${keyword === null ? " active" : ""}`}
@@ -264,7 +266,13 @@ export default function LecturerDirectory() {
               {l.title && <p className="lecturer-title">{l.title}</p>}
             </div>
           </div>
-          {l.keyword && <span className="lecturer-keyword">{l.keyword}</span>}
+          {l.keyword && (
+            <div className="lecturer-styles">
+              {splitKeywords(l.keyword).map((k) => (
+                <span key={k} className="lecturer-keyword">{k}</span>
+              ))}
+            </div>
+          )}
           {l.target && <p className="lecturer-target">対象：{l.target}</p>}
           {l.style && (
             <div className="lecturer-styles">
