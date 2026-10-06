@@ -16,6 +16,7 @@ interface Lecturer {
   siteUrl: string;
   pdfUrl: string;
   iconUrl: string;
+  postedOn: string;
 }
 
 // ダブルクォート内のカンマ・改行に対応した簡易CSVパーサー
@@ -64,6 +65,14 @@ function findColumn(header: string[], keyword: string): number {
   return header.findIndex((h) => h.includes(keyword));
 }
 
+// タイムスタンプ(例: 2026/10/05 10:58:02)の日付部分を「2026年10月5日」にする
+function formatPostedDate(timestamp: string): string {
+  const datePart = timestamp.trim().split(" ")[0];
+  const [y, m, d] = datePart.split(/[\/-]/);
+  if (!y || !m || !d) return "";
+  return `${y}年${Number(m)}月${Number(d)}日`;
+}
+
 function parseLecturers(csvText: string): Lecturer[] {
   const [header, ...body] = parseCsv(csvText);
   if (!header) return [];
@@ -82,13 +91,22 @@ function parseLecturers(csvText: string): Lecturer[] {
     // 管理者が手動で入力する「掲載用アイコンファイル名」(public/lecturer-icons/ 内のファイル名、任意)
     icon: findColumn(header, "掲載用アイコン"),
     approved: findColumn(header, "承認"),
+    timestamp: findColumn(header, "タイムスタンプ"),
   };
   // 承認列がまだ無いシートでは、誰も掲載されないようにする
   if (col.approved < 0) return [];
 
   const get = (r: string[], i: number) => (i >= 0 ? (r[i] || "").trim() : "");
 
-  return body
+  // 新しい申込みを上に出す(タイムスタンプの新しい順。同じ時刻なら、シートの下の行を優先)
+  const withOrder = body.map((r, i) => {
+    const ts = Date.parse(get(r, col.timestamp).replace(/\//g, "-").replace(" ", "T"));
+    return { r, i, ts: Number.isNaN(ts) ? 0 : ts };
+  });
+  withOrder.sort((a, b) => b.ts - a.ts || b.i - a.i);
+
+  return withOrder
+    .map(({ r }) => r)
     .filter((r) => get(r, col.approved) !== "")
     .map((r) => ({
       name: get(r, col.name),
@@ -100,6 +118,7 @@ function parseLecturers(csvText: string): Lecturer[] {
       contact: get(r, col.contact),
       siteUrl: get(r, col.siteUrl),
       pdfUrl: get(r, col.pdf) ? `/lecturer-pdfs/${encodeURIComponent(get(r, col.pdf))}` : "",
+      postedOn: formatPostedDate(get(r, col.timestamp)),
       iconUrl: get(r, col.icon) ? `/lecturer-icons/${encodeURIComponent(get(r, col.icon))}` : "",
     }))
     .filter((l) => l.name !== "");
@@ -111,6 +130,8 @@ export default function LecturerDirectory() {
   const [status, setStatus] = useState<Status>(SHEET_CSV_URL ? "loading" : "unconfigured");
   const [lecturers, setLecturers] = useState<Lecturer[]>([]);
   const [keyword, setKeyword] = useState<string | null>(null);
+  // 10件ずつ表示する(「もっと見る」で増える)
+  const [shownCount, setShownCount] = useState(10);
 
   useEffect(() => {
     if (!SHEET_CSV_URL) return;
@@ -160,6 +181,7 @@ export default function LecturerDirectory() {
   const filtered = keyword
     ? lecturers.filter((l) => splitKeywords(l.keyword).includes(keyword))
     : lecturers;
+  const visible = filtered.slice(0, shownCount);
 
   return (
     <>
@@ -193,7 +215,7 @@ export default function LecturerDirectory() {
         <div className="notice-card">「{keyword}」に該当する講師はいません。</div>
       ) : (
     <div className="lecturer-grid">
-      {filtered.map((l, i) => (
+      {visible.map((l, i) => (
         <article className="lecturer-card" key={`${l.name}-${i}`}>
           <div className="lecturer-head">
             {l.iconUrl ? (
@@ -210,7 +232,8 @@ export default function LecturerDirectory() {
           {l.target && <p className="lecturer-target">対象：{l.target}</p>}
           {l.style && <span className="lecturer-style">{l.style}</span>}
           {l.bio && <p className="lecturer-bio">{l.bio}</p>}
-                    <div className="lecturer-links">
+                    {l.postedOn && <p className="lecturer-posted">掲載日：{l.postedOn}</p>}
+          <div className="lecturer-links">
             {l.contact && <span className="lecturer-contact">申込先：{l.contact}</span>}
             {l.siteUrl && (
               <a className="lecturer-pdf" href={l.siteUrl} target="_blank" rel="noreferrer">
@@ -226,6 +249,11 @@ export default function LecturerDirectory() {
         </article>
       ))}
     </div>
+      )}
+      {filtered.length > shownCount && (
+        <button type="button" className="more-button" onClick={() => setShownCount(shownCount + 10)}>
+          もっと見る(残り{filtered.length - shownCount}人)
+        </button>
       )}
     </>
   );
