@@ -65,6 +65,14 @@ function findColumn(header: string[], keyword: string): number {
   return header.findIndex((h) => h.includes(keyword));
 }
 
+// 申込先の文から、リンク先を作る(URLがあればそのページ、メールアドレスがあればmailto)
+function contactHref(text: string): string {
+  const url = text.match(/https?:\/\/[^\s]+/);
+  if (url) return url[0];
+  const mail = text.match(/[\w.+-]+@[\w-]+\.[\w.-]+/);
+  return mail ? `mailto:${mail[0]}` : "";
+}
+
 // タイムスタンプ(例: 2026/10/05 10:58:02)の日付部分を「2026年10月5日」にする
 function formatPostedDate(timestamp: string): string {
   const datePart = timestamp.trim().split(" ")[0];
@@ -232,9 +240,16 @@ export default function LecturerDirectory() {
           {l.target && <p className="lecturer-target">対象：{l.target}</p>}
           {l.style && <span className="lecturer-style">{l.style}</span>}
           {l.bio && <p className="lecturer-bio">{l.bio}</p>}
-                    {l.postedOn && <p className="lecturer-posted">掲載日：{l.postedOn}</p>}
-          <div className="lecturer-links">
-            {l.contact && <span className="lecturer-contact">申込先：{l.contact}</span>}
+                    <div className="lecturer-links">
+            {l.contact && (
+              <span className="lecturer-contact">
+                申込先：{contactHref(l.contact) ? (
+                  <a href={contactHref(l.contact)} target={contactHref(l.contact).startsWith("http") ? "_blank" : undefined} rel="noreferrer">{l.contact}</a>
+                ) : (
+                  l.contact
+                )}
+              </span>
+            )}
             {l.siteUrl && (
               <a className="lecturer-pdf" href={l.siteUrl} target="_blank" rel="noreferrer">
                 サイトを見る →
@@ -246,6 +261,7 @@ export default function LecturerDirectory() {
               </a>
             )}
           </div>
+          {l.postedOn && <p className="lecturer-posted">掲載日：{l.postedOn}</p>}
         </article>
       ))}
     </div>
