@@ -252,3 +252,4 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .quick{grid-template-columns:1.15fr repeat(auto-fit,minmax(0,1fr))}
 .letter-line{font-size:15px;font-weight:700;color:#111;margin:14px 0 6px;line-height:1.9}
 .letter-section .letter-pickup{text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:4px}
+.sky-page main .simple-content h2{margin-bottom:18px}
