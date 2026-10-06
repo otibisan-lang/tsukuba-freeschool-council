@@ -138,6 +138,7 @@ export default function LecturerDirectory() {
   const [status, setStatus] = useState<Status>(SHEET_CSV_URL ? "loading" : "unconfigured");
   const [lecturers, setLecturers] = useState<Lecturer[]>([]);
   const [keyword, setKeyword] = useState<string | null>(null);
+  const [styleFilter, setStyleFilter] = useState<string | null>(null);
   // 10件ずつ表示する(「もっと見る」で増える)
   const [shownCount, setShownCount] = useState(10);
 
@@ -186,13 +187,40 @@ export default function LecturerDirectory() {
   const keywordList = Array.from(keywordCounts.entries())
     .sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0], "ja"))
     .map(([k]) => k);
-  const filtered = keyword
-    ? lecturers.filter((l) => splitKeywords(l.keyword).includes(keyword))
-    : lecturers;
+  const styleCounts = new Map<string, number>();
+  lecturers.forEach((l) =>
+    splitKeywords(l.style).forEach((k) => styleCounts.set(k, (styleCounts.get(k) || 0) + 1)),
+  );
+  const styleList = Array.from(styleCounts.keys()).sort((a, b) => a.localeCompare(b, "ja"));
+  const filtered = lecturers
+    .filter((l) => (keyword ? splitKeywords(l.keyword).includes(keyword) : true))
+    .filter((l) => (styleFilter ? splitKeywords(l.style).includes(styleFilter) : true));
+  const isFiltered = keyword !== null || styleFilter !== null;
   const visible = filtered.slice(0, shownCount);
 
   return (
     <>
+      {styleList.length > 0 && (
+        <div className="keyword-filter" role="group" aria-label="活動形態で絞り込む">
+          <button
+            type="button"
+            className={`keyword-chip${styleFilter === null ? " active" : ""}`}
+            onClick={() => setStyleFilter(null)}
+          >
+            すべて
+          </button>
+          {styleList.map((k) => (
+            <button
+              key={k}
+              type="button"
+              className={`keyword-chip${styleFilter === k ? " active" : ""}`}
+              onClick={() => setStyleFilter(styleFilter === k ? null : k)}
+            >
+              {k}
+            </button>
+          ))}
+        </div>
+      )}
       {keywordList.length > 0 && (
         <div className="keyword-filter" role="group" aria-label="キーワードで絞り込む">
           <button
@@ -215,12 +243,12 @@ export default function LecturerDirectory() {
         </div>
       )}
       <p className="keyword-count">
-        {keyword
-          ? `「${keyword}」の講師は${filtered.length}人です(掲載中は全${lecturers.length}人)`
+        {isFiltered
+          ? `該当の講師は${filtered.length}人です(掲載中は全${lecturers.length}人)`
           : `現在、掲載中の講師は${lecturers.length}人です`}
       </p>
       {filtered.length === 0 ? (
-        <div className="notice-card">「{keyword}」に該当する講師はいません。</div>
+        <div className="notice-card">該当する講師はいません。</div>
       ) : (
     <div className="lecturer-grid">
       {visible.map((l, i) => (
@@ -238,7 +266,13 @@ export default function LecturerDirectory() {
           </div>
           {l.keyword && <span className="lecturer-keyword">{l.keyword}</span>}
           {l.target && <p className="lecturer-target">対象：{l.target}</p>}
-          {l.style && <span className="lecturer-style">{l.style}</span>}
+          {l.style && (
+            <div className="lecturer-styles">
+              {splitKeywords(l.style).map((k) => (
+                <span key={k} className="lecturer-style">{k}</span>
+              ))}
+            </div>
+          )}
           {l.bio && <p className="lecturer-bio">{l.bio}</p>}
                     <div className="lecturer-links">
             {l.contact && (

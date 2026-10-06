@@ -175,3 +175,4 @@ body{
 .sky-page .simple-content{background:#fff;border-radius:22px;padding:44px 48px 60px;margin-bottom:60px;box-shadow:0 12px 30px rgba(14,100,160,.15)}
 @media(max-width:800px){.sky-page .simple-content{padding:28px 22px 40px;margin-bottom:40px;border-radius:18px}}
 .doc-actions{display:flex;flex-wrap:wrap;gap:12px;margin:12px 0 0}.doc-actions .button-outline{background:#fff}
+.lecturer-styles{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}.lecturer-styles .lecturer-style{margin:0}
