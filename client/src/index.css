@@ -263,3 +263,9 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 
 /* 本文の直後のボタン: 段落との間に余白 */
 .sky-page main .simple-content p + a.button,.sky-page main .simple-content p + a.button-primary,.sky-page main .simple-content p + a.button-outline{margin-top:20px}
+
+/* 参加スクール一覧: 元の指定より強く効かせて、文字をさらに大きく */
+.school-card .school-body p{font-size:14px;line-height:1.8;min-height:0}
+.school-card .card-meta{font-size:13px}
+.school-card .school-tags span{font-size:13px}
+.school-card .school-body h3{font-size:21px}
