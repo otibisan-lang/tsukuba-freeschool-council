@@ -160,7 +160,7 @@ body{
 /* トップのたより見出しの強調部分を白に */
 .letter-section .section-heading h2 em{color:#111}
 .lecturer-avatar{object-fit:cover}img.lecturer-avatar{display:block;padding:0}
-.pledge-note{font-size:12px;line-height:1.8;color:#111;margin-top:12px}
+.pledge-note{font-size:12px;line-height:1.8;color:#111;margin:12px 0 28px}
 
 /* 講師カードの横幅をそろえる(長いURLや申込先で、カードが広がらないように) */
 .lecturer-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
