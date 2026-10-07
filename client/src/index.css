@@ -371,3 +371,7 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .lecturer-actions{margin-top:22px}
 .join-cities{display:inline-block;margin-top:4px;font-size:14px;color:#111}
 .join-fee{font-size:22px;font-weight:700;color:#111;margin:18px 0;padding:6px 0}
+
+/* 出張講師ページ: 参加スクールと同じく、3列に並べられるように幅を広げる */
+.simple-content-wide{max-width:1120px}
+@media(min-width:801px){.simple-content-wide .lecturer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
