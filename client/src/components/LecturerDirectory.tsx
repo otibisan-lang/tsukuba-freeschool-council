@@ -191,8 +191,8 @@ function LecturerCard({ l }: { l: Lecturer }) {
         </div>
         {l.postedOn && <p className="lecturer-posted">掲載日：{l.postedOn}</p>}
       </div>
-      <button type="button" className="lecturer-toggle" aria-expanded={open} onClick={() => setOpen(!open)}>
-        {open ? "閉じる −" : "詳しく見る +"}
+      <button type="button" className="lecturer-toggle" aria-expanded={open} aria-label={open ? "閉じる" : "詳しく見る"} onClick={() => setOpen(!open)}>
+        {open ? "−" : "+"}
       </button>
     </article>
   );
