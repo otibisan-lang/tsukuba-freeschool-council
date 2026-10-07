@@ -312,3 +312,6 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .map-note .image-viewer-trigger{max-width:640px}
 .map-note-text{text-align:left}
 .map-note-text .share-actions{margin-top:16px}
+
+/* マップ: パソコンでは画像の上下を切らず、全体を大きく表示 */
+@media(min-width:801px){.map-note .image-viewer-thumb{max-height:none;object-fit:contain}.map-note .image-viewer-trigger{max-width:none}}
