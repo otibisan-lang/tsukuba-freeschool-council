@@ -369,3 +369,4 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 
 /* 掲載依頼のボタン: 本文との間を広げる */
 .lecturer-actions{margin-top:22px}
+.join-cities{display:inline-block;margin-top:4px;font-size:14px;color:#111}
