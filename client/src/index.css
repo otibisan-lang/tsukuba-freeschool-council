@@ -334,7 +334,7 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 /* 出張講師(スマホ): 2列、名前・所属・キーワードは常時、残りはタップで */
 .lecturer-toggle{display:none}
 @media(max-width:800px){
-.lecturer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lecturer-grid{grid-template-columns:minmax(0,1fr);gap:12px}
 .lecturer-card{padding:14px}
 .lecturer-card h3{font-size:15px}
 .lecturer-avatar{width:36px;height:36px;font-size:15px}
