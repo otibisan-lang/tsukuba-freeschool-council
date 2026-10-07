@@ -305,4 +305,4 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .share-actions .letter-share-button,.share-actions .letter-share-button:first-of-type{background:#fff;color:#111;border:1px solid #cfd9d6}
 .share-actions .letter-share-button:hover{background:#eaf6f8}
 .last-updated{font-size:14px;color:#111;margin:22px 0 0}.last-updated a{text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:4px;font-weight:700}
-.hero-updated{color:#fff;margin:20px 0 0}.hero-updated a{color:#fff}
+.hero-updated{color:#111;margin:20px 0 0}.hero-updated a{color:#111}
