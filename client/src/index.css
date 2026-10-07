@@ -366,3 +366,6 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 
 /* 出張講師の「さん」: 名前より一回り小さく */
 .lecturer-honorific{font-size:0.75em;font-weight:400}
+
+/* 掲載依頼のボタン: 本文との間を広げる */
+.lecturer-actions{margin-top:22px}
