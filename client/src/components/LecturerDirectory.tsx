@@ -132,6 +132,72 @@ function parseLecturers(csvText: string): Lecturer[] {
     .filter((l) => l.name !== "");
 }
 
+// キーワード等の区切り(「、」「,」「/」「空白」)で1つずつに分ける
+function splitKeywords(text: string): string[] {
+  return text.split(/[、,，/／\s]+/).map((k) => k.trim()).filter((k) => k !== "");
+}
+
+// 1人分のカード: 名前・所属・キーワードは常に表示。スマホでは、残りは「詳しく見る」で開く
+function LecturerCard({ l }: { l: Lecturer }) {
+  const [open, setOpen] = useState(false);
+  return (
+    <article className={`lecturer-card${open ? " is-open" : ""}`}>
+      <div className="lecturer-core">
+        <div className="lecturer-head">
+          {l.iconUrl ? (
+            <img className="lecturer-avatar" src={l.iconUrl} alt={`${l.name}さん`} />
+          ) : (
+            <span className="lecturer-avatar" aria-hidden="true">{l.name.charAt(0)}</span>
+          )}
+          <div>
+            <h3>{l.name}さん</h3>
+            {l.title && <p className="lecturer-title">{l.title}</p>}
+          </div>
+        </div>
+        {l.keyword && (
+          <div className="lecturer-styles">
+            {splitKeywords(l.keyword).map((k) => (
+              <span key={k} className="lecturer-keyword">{k}</span>
+            ))}
+          </div>
+        )}
+      </div>
+      <div className="lecturer-details">
+        {l.target && <p className="lecturer-target">対象：{l.target}</p>}
+        {l.style && (
+          <div className="lecturer-styles">
+            {splitKeywords(l.style).map((k) => (
+              <span key={k} className="lecturer-style">{k}</span>
+            ))}
+          </div>
+        )}
+        {l.bio && <p className="lecturer-bio">{l.bio}</p>}
+        <div className="lecturer-links">
+          {l.contact && (
+            <span className="lecturer-contact">
+              申込先：{contactHref(l.contact) ? (
+                <a href={contactHref(l.contact)} target={contactHref(l.contact).startsWith("http") ? "_blank" : undefined} rel="noreferrer">{l.contact}</a>
+              ) : (
+                l.contact
+              )}
+            </span>
+          )}
+          {l.siteUrl && (
+            <a className="lecturer-pdf" href={l.siteUrl} target="_blank" rel="noreferrer">サイトを見る →</a>
+          )}
+          {l.pdfUrl && (
+            <a className="lecturer-pdf" href={l.pdfUrl} target="_blank" rel="noreferrer">資料PDFを見る →</a>
+          )}
+        </div>
+        {l.postedOn && <p className="lecturer-posted">掲載日：{l.postedOn}</p>}
+      </div>
+      <button type="button" className="lecturer-toggle" aria-expanded={open} onClick={() => setOpen(!open)}>
+        {open ? "閉じる −" : "詳しく見る +"}
+      </button>
+    </article>
+  );
+}
+
 type Status = "loading" | "ready" | "empty" | "unconfigured" | "error";
 
 export default function LecturerDirectory() {
@@ -177,8 +243,6 @@ export default function LecturerDirectory() {
   }
 
   // キーワードは「、」「,」「/」「空白」で区切って、1つずつボタンにする
-  const splitKeywords = (text: string) =>
-    text.split(/[、,，/／\s]+/).map((k) => k.trim()).filter((k) => k !== "");
 
   const keywordCounts = new Map<string, number>();
   lecturers.forEach((l) =>
@@ -254,57 +318,7 @@ export default function LecturerDirectory() {
       ) : (
     <div className="lecturer-grid">
       {visible.map((l, i) => (
-        <article className="lecturer-card" key={`${l.name}-${i}`}>
-          <div className="lecturer-head">
-            {l.iconUrl ? (
-              <img className="lecturer-avatar" src={l.iconUrl} alt={`${l.name}さん`} />
-            ) : (
-              <span className="lecturer-avatar" aria-hidden="true">{l.name.charAt(0)}</span>
-            )}
-            <div>
-              <h3>{l.name}さん</h3>
-              {l.title && <p className="lecturer-title">{l.title}</p>}
-            </div>
-          </div>
-          {l.keyword && (
-            <div className="lecturer-styles">
-              {splitKeywords(l.keyword).map((k) => (
-                <span key={k} className="lecturer-keyword">{k}</span>
-              ))}
-            </div>
-          )}
-          {l.target && <p className="lecturer-target">対象：{l.target}</p>}
-          {l.style && (
-            <div className="lecturer-styles">
-              {splitKeywords(l.style).map((k) => (
-                <span key={k} className="lecturer-style">{k}</span>
-              ))}
-            </div>
-          )}
-          {l.bio && <p className="lecturer-bio">{l.bio}</p>}
-                    <div className="lecturer-links">
-            {l.contact && (
-              <span className="lecturer-contact">
-                申込先：{contactHref(l.contact) ? (
-                  <a href={contactHref(l.contact)} target={contactHref(l.contact).startsWith("http") ? "_blank" : undefined} rel="noreferrer">{l.contact}</a>
-                ) : (
-                  l.contact
-                )}
-              </span>
-            )}
-            {l.siteUrl && (
-              <a className="lecturer-pdf" href={l.siteUrl} target="_blank" rel="noreferrer">
-                サイトを見る →
-              </a>
-            )}
-            {l.pdfUrl && (
-              <a className="lecturer-pdf" href={l.pdfUrl} target="_blank" rel="noreferrer">
-                資料PDFを見る →
-              </a>
-            )}
-          </div>
-          {l.postedOn && <p className="lecturer-posted">掲載日：{l.postedOn}</p>}
-        </article>
+        <LecturerCard key={`${l.name}-${i}`} l={l} />
       ))}
     </div>
       )}

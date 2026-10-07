@@ -330,3 +330,20 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .school-mobile-body .school-tags{margin:0 0 14px}
 }
 .school-site-link{display:inline-block;font-size:13px;font-weight:700;color:#111;text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:4px}
+
+/* 出張講師(スマホ): 2列、名前・所属・キーワードは常時、残りはタップで */
+.lecturer-toggle{display:none}
+@media(max-width:800px){
+.lecturer-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}
+.lecturer-card{padding:14px}
+.lecturer-card h3{font-size:15px}
+.lecturer-avatar{width:36px;height:36px;font-size:15px}
+.lecturer-head{gap:8px;margin-bottom:8px}
+.lecturer-title{font-size:11px}
+.lecturer-keyword,.lecturer-style{font-size:11px;padding:2px 8px}
+.lecturer-details{display:none}
+.lecturer-card.is-open .lecturer-details{display:block;margin-top:10px;padding-top:10px;border-top:1px dashed #d7eaf0}
+.lecturer-details .lecturer-bio{font-size:12px;line-height:1.7}
+.lecturer-details .lecturer-target{font-size:11px}
+.lecturer-toggle{display:inline-block;margin-top:8px;padding:0;background:none;border:0;font:inherit;font-size:13px;font-weight:700;color:#111;text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:4px;cursor:pointer}
+}
