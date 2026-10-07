@@ -254,3 +254,9 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .letter-section .letter-pickup{text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:4px}
 .sky-page main .simple-content h2{margin-bottom:18px}
 .footer-col{display:flex;flex-direction:column;gap:8px;font-size:12px}.footer-col b{font-size:13px;margin-bottom:2px}.footer-col a{text-decoration:underline;text-underline-offset:3px}
+
+/* 参加スクール一覧: カードの文字を一回り大きく */
+.school-card .card-meta{font-size:12px}
+.school-card h3,.school-body h3{font-size:20px}
+.school-body p{font-size:13px;line-height:1.8;min-height:0}
+.school-tags span{font-size:12px}
