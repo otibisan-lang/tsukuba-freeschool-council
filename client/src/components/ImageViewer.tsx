@@ -25,10 +25,10 @@ export function ShareButtons({ src, alt, shareText }: { src: string; alt: string
 
   return (
     <div className="share-actions">
-      <button type="button" className="letter-share-button" onClick={shareNative}><Share2 size={16}/>共有する</button>
+      <button type="button" className="letter-share-button" onClick={shareNative}><Share2 size={16}/>共有</button>
       <a className="letter-share-button" href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(imageUrl())}`} target="_blank" rel="noreferrer">X</a>
       <a className="letter-share-button" href={`https://line.me/R/msg/text/?${encodeURIComponent(`${text}\n${imageUrl()}`)}`} target="_blank" rel="noreferrer">LINE</a>
-      <button type="button" className="letter-share-button" onClick={copyLink}><Copy size={16}/>{copied ? "コピーしました" : "リンクをコピー"}</button>
+      <button type="button" className="letter-share-button" onClick={copyLink}><Copy size={16}/>{copied ? "コピーしました" : "コピー"}</button>
     </div>
   );
 }
