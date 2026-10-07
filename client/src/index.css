@@ -353,3 +353,7 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 
 /* 出張先の絞り込み: マウスを乗せたときの枠線も水色に */
 .keyword-filter[aria-label="出張先で絞り込む"] .keyword-chip:hover{border-color:#5aa9d6}
+
+/* 出張講師の名前: 大きく、太字に */
+.lecturer-card h3{font-size:20px;font-weight:700}
+@media(max-width:800px){.lecturer-card h3{font-size:18px}}
