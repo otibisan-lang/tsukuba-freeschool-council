@@ -8,7 +8,7 @@ const schools = [
   { name:"サドベリースクールつくば空", yomi:"さどべりーすくーるつくばそら", area:"つくば市春日", tone:"mint", comment:"子どもには、自ら育つ力が備わっています。一人ひとりの「らしさ」を大切にし、違いの中で自由と責任を学ぶスクールです。", target:"小学生・中学生・高校生", site:"https://www.tsukuba-sora.com/" },
   { name:"TSUKUBA学びの杜学園", yomi:"つくばまなびのもりがくえん", area:"つくば市吾妻", tone:"lime", comment:"子どもたちが自分のペースで安心して過ごせる学びの場。週5開校、送迎あり。ご相談は土日も受け付けています。", target:"小学生・中学生・高校生", site:"https://manabinomori-gakuen.com/" },
   { name:"つくばフリースクールKimiiro", yomi:"つくばふりーすくーるきみいろ", area:"つくば市上ノ室", tone:"violet", comment:"「保護者満足度100%」庭付きの古民家で、週4日開校しています。市外問わず通いやすいプランの用意あり。", target:"小学生・中学生・高校生", site:"https://freeschool-kimiiro.com/" },
-  { name:"子ども社会塾", yomi:"こどもしゃかいじゅく", area:"つくば市竹園ほか・オンライン", tone:"gold", comment:"できる子より、“生き残れる子”へ。社会を生き抜く力を早くから習得するためのスクール。学校で教えないこと、教えます。", target:"小学生・中学生・高校生", site:"https://www.sjuku.jp/" },
+  { name:"子ども社会塾", yomi:"こどもしゃかいじゅく", area:"つくば市竹園・自由ケ丘・秋葉原・オンライン", tone:"gold", comment:"できる子より、“生き残れる子”へ。社会を生き抜く力を早くから習得するためのスクール。学校で教えないこと、教えます。", target:"小学生・中学生・高校生", site:"https://www.sjuku.jp/" },
   { name:"こどもとつくる学校でんでん", yomi:"こどもとつくるがっこうでんでん", area:"つくば市竹園", tone:"cyan", comment:"イエナプランを軸に、子どもの“やりたい”からはじまる生きた本物の学びを実践します。", target:"小学生・中学生(高校生は応相談)", site:"https://denden-alternativeschool.jimdofree.com/" },
   { name:"fermi cafe", yomi:"ふぇるみかふぇ", area:"つくば市二の宮", tone:"purple", comment:"「話せる・学べる・居られる」好奇心と気持ちに寄り添うサイエンスカフェ。実験講座やAI教室などのイベントも多数。", target:"子どもから大人まで", site:"https://sites.google.com/view/fermi-cafe/" },
   { name:"つくば高等学院", yomi:"つくばこうとうがくいん", area:"つくば市二の宮", tone:"orange", comment:"自分のペースを大切にしながら、ITにも触れられます。ほっと過ごせるフリースクール・通信制高校サポート校。", target:"小学5-6年・中学生・高校生", site:"https://tsukugaku.com/" },
