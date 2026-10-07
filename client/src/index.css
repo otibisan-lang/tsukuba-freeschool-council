@@ -279,3 +279,10 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 /* ページタイトルの下の一言(リード文): どのページも同じ見た目に */
 .sky-page main .simple-content .lead,.sky-page main .simple-content .parents-lead,.sky-page main .simple-content .about-lead{font-size:18px;font-weight:700;color:#111;line-height:1.8;margin:0 0 24px}
 @media(max-width:800px){.sky-page main .simple-content .lead,.sky-page main .simple-content .parents-lead,.sky-page main .simple-content .about-lead{font-size:17px}}
+
+/* たより・マップ: 画像を拡大せず表示し、共有ボタンを並べる */
+.share-card{display:flex;flex-direction:column;gap:12px;width:100%}
+.share-card .share-card-img{display:block;width:100%;height:auto;object-fit:contain;border-radius:10px;background:#fff}
+.share-actions{display:flex;flex-wrap:wrap;gap:6px}
+.share-actions .letter-share-button{display:inline-flex;align-items:center;gap:5px;padding:7px 12px;font-size:12px;cursor:pointer;font-family:inherit}
+.share-pdf{font-size:13px;font-weight:700;color:#8f6c23;text-decoration:underline dotted;text-underline-offset:4px;align-self:flex-start}
