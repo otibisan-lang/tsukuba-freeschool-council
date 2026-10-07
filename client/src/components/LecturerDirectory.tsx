@@ -154,23 +154,19 @@ function LecturerCard({ l }: { l: Lecturer }) {
             {l.title && <p className="lecturer-title">{l.title}</p>}
           </div>
         </div>
-        {l.keyword && (
+        {(l.keyword || l.style) && (
           <div className="lecturer-styles">
             {splitKeywords(l.keyword).map((k) => (
-              <span key={k} className="lecturer-keyword">{k}</span>
+              <span key={`k-${k}`} className="lecturer-keyword">{k}</span>
+            ))}
+            {splitKeywords(l.style).map((k) => (
+              <span key={`s-${k}`} className="lecturer-style">{k}</span>
             ))}
           </div>
         )}
       </div>
       <div className="lecturer-details">
         {l.target && <p className="lecturer-target">対象：{l.target}</p>}
-        {l.style && (
-          <div className="lecturer-styles">
-            {splitKeywords(l.style).map((k) => (
-              <span key={k} className="lecturer-style">{k}</span>
-            ))}
-          </div>
-        )}
         {l.bio && <p className="lecturer-bio">{l.bio}</p>}
         <div className="lecturer-links">
           {l.contact && (
