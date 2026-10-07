@@ -286,3 +286,10 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .share-actions{display:flex;flex-wrap:wrap;gap:6px}
 .share-actions .letter-share-button{display:inline-flex;align-items:center;gap:5px;padding:7px 12px;font-size:12px;cursor:pointer;font-family:inherit}
 .share-pdf{font-size:13px;font-weight:700;color:#8f6c23;text-decoration:underline dotted;text-underline-offset:4px;align-self:flex-start}
+
+/* たより・マップ: 画像をタップすると画面いっぱいに表示(拡大・移動なし) */
+.image-viewer-trigger{display:block;width:100%;padding:0;border:0;background:transparent;cursor:zoom-in}
+.image-viewer-thumb{display:block;width:100%;height:auto;object-fit:contain}
+.image-lightbox{position:fixed;inset:0;z-index:1000;display:grid;place-items:center;padding:12px;background:rgba(12,31,38,.92);cursor:zoom-out}
+.image-lightbox img{max-width:100%;max-height:100vh;width:auto;height:auto;object-fit:contain}
+.image-lightbox-close{position:fixed;top:14px;right:14px;width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:#183f4b;font-size:26px;line-height:1;cursor:pointer}
