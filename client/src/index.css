@@ -345,5 +345,5 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .lecturer-card.is-open .lecturer-details{display:block;margin-top:10px;padding-top:10px;border-top:1px dashed #d7eaf0}
 .lecturer-details .lecturer-bio{font-size:12px;line-height:1.7}
 .lecturer-details .lecturer-target{font-size:11px}
-.lecturer-card{position:relative}.lecturer-toggle{position:absolute;top:10px;right:12px;padding:4px;background:none;border:0;font-size:26px;font-weight:700;line-height:1;color:#FF7F0E;cursor:pointer}.lecturer-core{padding-right:36px}
+.lecturer-card{position:relative}.lecturer-toggle{display:block;position:absolute;top:10px;right:12px;padding:4px;background:none;border:0;font-size:26px;font-weight:700;line-height:1;color:#FF7F0E;cursor:pointer}.lecturer-core{padding-right:36px}
 }
