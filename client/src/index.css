@@ -329,3 +329,4 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .school-mobile-body p{font-size:14px;line-height:1.8;color:#111;margin:14px 0 10px}
 .school-mobile-body .school-tags{margin:0 0 14px}
 }
+.school-site-link{display:inline-block;font-size:13px;font-weight:700;color:#111;text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:4px}
