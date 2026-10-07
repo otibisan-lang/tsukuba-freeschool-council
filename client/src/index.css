@@ -294,3 +294,9 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .image-lightbox img{max-width:100%;max-height:100vh;width:auto;height:auto;object-fit:contain}
 .image-lightbox-close{position:fixed;top:14px;right:14px;width:44px;height:44px;border:0;border-radius:50%;background:#fff;color:#183f4b;font-size:26px;line-height:1;cursor:pointer}
 .letter-share{margin-top:14px}
+
+/* 更新履歴 */
+.history-list{list-style:none;padding:0;margin:8px 0 0}
+.history-list li{display:flex;gap:18px;align-items:baseline;padding:12px 0;border-bottom:1px dashed #cfe3ee;line-height:1.8;color:#111}
+.history-list li span{flex:none;font-weight:700;min-width:7em}
+@media(max-width:800px){.history-list li{flex-direction:column;gap:2px}}
