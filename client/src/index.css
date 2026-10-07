@@ -384,3 +384,5 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 @media(min-width:801px){.lecturer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 @media(max-width:800px){.lecturer-page{padding:0 22px 70px}.lecturer-block{padding:24px 20px;margin:0 0 20px;border-radius:18px}}
 .mail-format{background:#FFF7D7;border-color:#f0dfa0}
+.lecturer-notes{display:flex;flex-wrap:wrap;gap:4px 28px}
+.lecturer-notes .lecturer-note{margin:0}
