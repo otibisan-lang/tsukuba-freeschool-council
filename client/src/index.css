@@ -260,3 +260,6 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .school-card h3,.school-body h3{font-size:20px}
 .school-body p{font-size:13px;line-height:1.8;min-height:0}
 .school-tags span{font-size:12px}
+
+/* 本文の直後のボタン: 段落との間に余白 */
+.sky-page main .simple-content p + a.button,.sky-page main .simple-content p + a.button-primary,.sky-page main .simple-content p + a.button-outline{margin-top:20px}
