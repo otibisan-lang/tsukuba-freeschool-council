@@ -262,7 +262,7 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .school-tags span{font-size:12px}
 
 /* 本文の直後のボタン: 段落との間に余白 */
-.sky-page main .simple-content p + a.button,.sky-page main .simple-content p + a.button-primary,.sky-page main .simple-content p + a.button-outline{margin-top:20px}
+.sky-page main .simple-content p + a.button,.sky-page main .simple-content p + a.button-primary,.sky-page main .simple-content p + a.button-outline,.block-page p + a.button,.block-page p + a.button-primary,.block-page p + a.button-outline{margin-top:20px}
 
 /* 参加スクール一覧: 元の指定より強く効かせて、文字をさらに大きく */
 .school-card .school-body p{font-size:14px;line-height:1.8;min-height:0}
@@ -278,8 +278,8 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .about-intro .about-lead{margin-bottom:0}}
 
 /* ページタイトルの下の一言(リード文): どのページも同じ見た目に */
-.sky-page main .simple-content .lead,.sky-page main .simple-content .parents-lead,.sky-page main .simple-content .about-lead{font-size:18px;font-weight:700;color:#111;line-height:1.8;margin:0 0 24px}
-@media(max-width:800px){.sky-page main .simple-content .lead,.sky-page main .simple-content .parents-lead,.sky-page main .simple-content .about-lead{font-size:17px}}
+.sky-page main .lead,.sky-page main .parents-lead,.sky-page main .about-lead{font-size:18px;font-weight:700;color:#111;line-height:1.8;margin:0 0 24px}
+@media(max-width:800px){.sky-page main .lead,.sky-page main .parents-lead,.sky-page main .about-lead{font-size:17px}}
 
 /* たより・マップ: 画像を拡大せず表示し、共有ボタンを並べる */
 .share-card{display:flex;flex-direction:column;gap:12px;width:100%}
@@ -377,12 +377,12 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 @media(min-width:801px){.simple-content-wide .lecturer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
 
 /* 出張講師ページ: 3つの白いブロックに分けて、一覧は青い背景の上に直接並べる */
-.lecturer-page{max-width:1120px;margin:0 auto;padding:0 32px 100px}
-.lecturer-block{background:#fff;border-radius:22px;padding:34px 38px;margin:0 0 28px;box-shadow:0 12px 30px rgba(14,100,160,.15)}
-.lecturer-page h2{border-left:5px solid #FF7F0E;padding-left:14px;line-height:1.4;font-size:25px;margin:0 0 18px}
+.block-page{max-width:1120px;margin:0 auto;padding:0 32px 100px}
+.content-block{background:#fff;border-radius:22px;padding:34px 38px;margin:0 0 28px;box-shadow:0 12px 30px rgba(14,100,160,.15)}
+.block-page h2{border-left:5px solid #FF7F0E;padding-left:14px;line-height:1.4;font-size:25px;margin:0 0 18px}
 .lecturer-list-heading{margin-top:8px}
 @media(min-width:801px){.lecturer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
-@media(max-width:800px){.lecturer-page{padding:0 22px 70px}.lecturer-block{padding:24px 20px;margin:0 0 20px;border-radius:18px}}
+@media(max-width:800px){.block-page{padding:0 22px 70px}.content-block{padding:24px 20px;margin:0 0 20px;border-radius:18px}}
 .mail-format{background:#FFF7D7;border-color:#f0dfa0}
 .lecturer-notes{display:flex;flex-wrap:wrap;gap:4px 28px}
 .lecturer-notes .lecturer-note{margin:0}
