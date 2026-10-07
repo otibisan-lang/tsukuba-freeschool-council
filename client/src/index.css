@@ -300,3 +300,7 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .history-list li{display:flex;gap:18px;align-items:baseline;padding:12px 0;border-bottom:1px dashed #cfe3ee;line-height:1.8;color:#111}
 .history-list li span{flex:none;font-weight:700;min-width:7em}
 @media(max-width:800px){.history-list li{flex-direction:column;gap:2px}}
+
+/* 共有ボタン: 全部、白背景・黒文字に統一 */
+.share-actions .letter-share-button,.share-actions .letter-share-button:first-of-type{background:#fff;color:#111;border:1px solid #cfd9d6}
+.share-actions .letter-share-button:hover{background:#eaf6f8}
