@@ -150,7 +150,7 @@ function LecturerCard({ l }: { l: Lecturer }) {
             <span className="lecturer-avatar" aria-hidden="true">{l.name.charAt(0)}</span>
           )}
           <div>
-            <h3>{l.name}さん</h3>
+            <h3>{l.name}<span className="lecturer-honorific">さん</span></h3>
             {l.title && <p className="lecturer-title">{l.title}</p>}
           </div>
         </div>

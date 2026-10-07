@@ -363,3 +363,6 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .lecturer-styles{align-items:center}
 .lecturer-styles .lecturer-style,.lecturer-styles .lecturer-keyword{margin:0;line-height:1.4;align-self:center;display:inline-block}
 @media(max-width:800px){.about-intro{gap:6px}.about-intro .about-lead{margin-bottom:0}}
+
+/* 出張講師の「さん」: 名前より一回り小さく */
+.lecturer-honorific{font-size:0.75em;font-weight:400}
