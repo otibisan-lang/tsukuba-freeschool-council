@@ -347,3 +347,6 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .lecturer-details .lecturer-target{font-size:11px}
 .lecturer-card{position:relative}.lecturer-toggle{display:block;position:absolute;top:10px;right:12px;padding:4px;background:none;border:0;font-size:26px;font-weight:700;line-height:1;color:#FF7F0E;cursor:pointer}.lecturer-core{padding-right:36px}
 }
+
+/* 出張先の絞り込み: 選択中を水色に(キーワードの黄色と区別) */
+.keyword-filter[aria-label="出張先で絞り込む"] .keyword-chip.active{background:#e2f2fb;border-color:#5aa9d6;color:#1f5f85}
