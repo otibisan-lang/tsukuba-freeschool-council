@@ -375,3 +375,11 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 /* 出張講師ページ: 参加スクールと同じく、3列に並べられるように幅を広げる */
 .simple-content-wide{max-width:1120px}
 @media(min-width:801px){.simple-content-wide .lecturer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+
+/* 出張講師ページ: 3つの白いブロックに分けて、一覧は青い背景の上に直接並べる */
+.lecturer-page{max-width:1120px;margin:0 auto;padding:0 32px 100px}
+.lecturer-block{background:#fff;border-radius:22px;padding:34px 38px;margin:0 0 28px;box-shadow:0 12px 30px rgba(14,100,160,.15)}
+.lecturer-page h2{border-left:5px solid #FF7F0E;padding-left:14px;line-height:1.4;font-size:25px;margin:0 0 18px}
+.lecturer-list-heading{margin-top:8px}
+@media(min-width:801px){.lecturer-grid{grid-template-columns:repeat(3,minmax(0,1fr))}}
+@media(max-width:800px){.lecturer-page{padding:0 22px 70px}.lecturer-block{padding:24px 20px;margin:0 0 20px;border-radius:18px}}
