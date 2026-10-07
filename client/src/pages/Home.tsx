@@ -12,7 +12,7 @@ const schools = [
   { name:"こどもとつくる学校でんでん", yomi:"こどもとつくるがっこうでんでん", area:"つくば市竹園", tone:"cyan", comment:"イエナプランを軸に、子どもの“やりたい”からはじまる生きた本物の学びを実践します。", target:"小学生・中学生（高校生は応相談）", site:"https://denden-alternativeschool.jimdofree.com/" },
   { name:"fermi cafe", yomi:"ふぇるみかふぇ", area:"つくば市二の宮", tone:"purple", comment:"「話す・学ぶ・つながる」好きなことや気持ちに寄り添うサイエンスカフェ。実験講座やAI教室などのイベントも多数。", target:"子どもから大人まで", site:"https://sites.google.com/view/fermi-cafe/" },
   { name:"つくば高等学院", yomi:"つくばこうとうがくいん", area:"つくば市二の宮", tone:"orange", comment:"自分のペースを大切にしながら、ITにも触れられます。ほっと過ごせるフリースクール・通信制高校サポート校。", target:"小学5年〜高校生", site:"https://tsukugaku.com/" },
-  { name:"ROBE学園", yomi:"ろーべがくえん", area:"つくば市緑が丘", tone:"brown", comment:"無学年教材で自分のペースで学べる、週3日開所のフリースクール。子ども食堂も利用可能です。", target:"小学生・中学生・高校生", site:"https://npo-robe.org/" },
+  { name:"ROBE学園", yomi:"ろーべがくえん", area:"つくば市緑が丘", tone:"brown", comment:"無学年教材で自分のペースで学べる、週3日開所のフリースクール。送迎あり。子ども食堂も利用可能です。", target:"小学生・中学生・高校生", site:"https://npo-robe.org/" },
   { name:"CoreDa!探究ラボ", yomi:"こあだたんきゅうらぼ", area:"つくば市春日", tone:"sky", comment:"子どもたちに豊かな体験を提供し、世の中の面白さと学びの楽しさを伝える習い事教室。2026年10月、新拠点オープンしました！", target:"小学生・中学生・高校生", site:"https://school.oneangle.jp/" },
   { name:"親子の居場所×フリースクール imakoko", yomi:"おやこのいばしょ", area:"つくばみらい市板橋", tone:"pink", comment:"不登校当事者の親子が運営しています。一人ひとりのペースで過ごせる、みんなの心が豊かになれる居場所を目指しています。", target:"小学生・中学生の親子", site:"#", insta:"https://www.instagram.com/imakoko_tsukubamirai/" },
 ];
