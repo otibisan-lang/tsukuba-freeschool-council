@@ -274,7 +274,7 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .about-intro{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:28px;align-items:center;margin:0 0 8px}
 .about-intro .about-lead{margin:0}
 .about-intro .about-art{width:240px;margin:0}
-@media(max-width:800px){.about-intro{grid-template-columns:minmax(0,1fr)}.about-intro .about-art{order:-1;width:200px;margin:0 auto 8px}}
+@media(max-width:800px){.about-intro{grid-template-columns:minmax(0,1fr)}.about-intro .about-art{order:0;width:200px;margin:8px auto 0}}
 
 /* ページタイトルの下の一言(リード文): どのページも同じ見た目に */
 .sky-page main .simple-content .lead,.sky-page main .simple-content .parents-lead,.sky-page main .simple-content .about-lead{font-size:18px;font-weight:700;color:#111;line-height:1.8;margin:0 0 24px}
