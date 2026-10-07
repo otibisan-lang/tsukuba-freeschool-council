@@ -350,3 +350,6 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 
 /* 出張先の絞り込み: 選択中を水色に(キーワードの黄色と区別) */
 .keyword-filter[aria-label="出張先で絞り込む"] .keyword-chip.active{background:#e2f2fb;border-color:#5aa9d6;color:#1f5f85}
+
+/* 出張先の絞り込み: マウスを乗せたときの枠線も水色に */
+.keyword-filter[aria-label="出張先で絞り込む"] .keyword-chip:hover{border-color:#5aa9d6}
