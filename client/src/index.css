@@ -370,3 +370,4 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 /* 掲載依頼のボタン: 本文との間を広げる */
 .lecturer-actions{margin-top:22px}
 .join-cities{display:inline-block;margin-top:4px;font-size:14px;color:#111}
+.join-fee{font-size:22px;font-weight:700;color:#111;margin:18px 0;padding:6px 0}
