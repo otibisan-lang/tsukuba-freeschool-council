@@ -226,10 +226,10 @@ body{
 @media(max-width:800px){.parents-intro-wrap{grid-template-columns:minmax(0,1fr)}.parents-art{order:-1;width:170px;margin:0 auto}}
 
 /* 出張講師: 黄色いカードの横にイラスト */
-.side-art-wrap{display:grid;grid-template-columns:minmax(0,1fr) 200px;gap:24px;align-items:center;margin:20px 0 14px}
+.side-art-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:center;margin:20px 0 14px}
 .side-art-wrap .lecturer-intro{margin:0}
-.side-art{display:block;width:200px;height:auto}
-@media(max-width:800px){.side-art-wrap{grid-template-columns:minmax(0,1fr)}.side-art{order:-1;width:160px;margin:0 auto}}
+.side-art{display:block;width:300px;height:auto}
+@media(max-width:800px){.side-art-wrap{grid-template-columns:minmax(0,1fr)}.side-art{order:-1;width:240px;margin:0 auto}}
 .about-art{display:block;width:min(294px,63%);height:auto;margin:8px auto 24px}
 
 /* スマホのメニュー: 寄附・会員登録を横並びのボタンに */
