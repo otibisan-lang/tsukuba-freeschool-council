@@ -169,7 +169,7 @@ body{
 @media(max-width:600px){.lecturer-grid{grid-template-columns:minmax(0,1fr)}}
 .lecturer-posted{font-size:12px;color:#111;margin:0 0 8px}
 .more-button{display:block;margin:0 auto 40px;padding:12px 28px;border:2px solid #FF7F0E;border-radius:999px;background:#fff;color:#FF7F0E;font-weight:700;font-family:inherit;cursor:pointer}.more-button:hover{background:#FF7F0E;color:#fff}
-#mail-howto,#apply{scroll-margin-top:110px}.jump-links{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 8px}.jump-links a{display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;border:2px solid #FF7F0E;color:#FF7F0E;font-size:14px;font-weight:700}.jump-links a:hover{background:#FF7F0E;color:#fff}
+#list,#mail-howto,#apply{scroll-margin-top:110px}.jump-links{display:flex;flex-wrap:wrap;gap:12px;margin:0 0 8px}.jump-links a{display:inline-block;padding:10px 18px;border-radius:999px;background:#fff;border:2px solid #FF7F0E;color:#FF7F0E;font-size:14px;font-weight:700}.jump-links a:hover{background:#FF7F0E;color:#fff}
 
 /* 空の背景のページ: 本文は白いカードに入れて読みやすくする(タイトルは青の上に残す) */
 .sky-page .simple-content{background:#fff;border-radius:22px;padding:44px 48px 60px;margin-bottom:60px;box-shadow:0 12px 30px rgba(14,100,160,.15)}
