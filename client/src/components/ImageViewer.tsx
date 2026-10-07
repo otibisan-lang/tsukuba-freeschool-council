@@ -1,8 +1,28 @@
 import { useEffect, useState } from "react";
+import { Copy, Share2 } from "lucide-react";
 
 // 画像をそのまま表示し、タップすると画面いっぱいに表示する(拡大・移動はしない)
-export default function ImageViewer({ src, alt }: { src: string; alt: string }) {
+export default function ImageViewer({ src, alt, shareText }: { src: string; alt: string; shareText?: string }) {
   const [open, setOpen] = useState(false);
+  const [copied, setCopied] = useState(false);
+  const text = shareText ?? `${alt}を共有します。`;
+  const imageUrl = () => new URL(src, window.location.href).href;
+
+  const shareNative = async () => {
+    if (navigator.share) {
+      try { await navigator.share({ title: alt, text, url: imageUrl() }); } catch { /* cancelled */ }
+    } else {
+      await copyLink();
+    }
+  };
+
+  const copyLink = async () => {
+    try {
+      await navigator.clipboard.writeText(imageUrl());
+      setCopied(true);
+      window.setTimeout(() => setCopied(false), 2200);
+    } catch { /* clipboard permission denied */ }
+  };
 
   useEffect(() => {
     if (!open) return;
@@ -20,6 +40,13 @@ export default function ImageViewer({ src, alt }: { src: string; alt: string }) 
       <button type="button" className="image-viewer-trigger" onClick={() => setOpen(true)} aria-label={`${alt}を画面いっぱいに表示`}>
         <img className="image-viewer-thumb" src={src} alt={alt} loading="lazy" />
       </button>
+      <div className="share-actions">
+        <button type="button" className="letter-share-button" onClick={shareNative}><Share2 size={16}/>共有する</button>
+        <a className="letter-share-button" href={`https://twitter.com/intent/tweet?text=${encodeURIComponent(text)}&url=${encodeURIComponent(imageUrl())}`} target="_blank" rel="noreferrer">X</a>
+        <a className="letter-share-button" href={`https://line.me/R/msg/text/?${encodeURIComponent(`${text}
+${imageUrl()}`)}`} target="_blank" rel="noreferrer">LINE</a>
+        <button type="button" className="letter-share-button" onClick={copyLink}><Copy size={16}/>{copied ? "コピーしました" : "リンクをコピー"}</button>
+      </div>
       {open && (
         <div className="image-lightbox" role="dialog" aria-modal="true" onClick={() => setOpen(false)}>
           <img src={src} alt={alt} />
