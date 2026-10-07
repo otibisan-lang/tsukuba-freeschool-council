@@ -269,3 +269,9 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .school-card .card-meta{font-size:13px}
 .school-card .school-tags span{font-size:13px}
 .school-card .school-body h3{font-size:21px}
+
+/* 協議会とは: 冒頭の本文を左、イラストを右に */
+.about-intro{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:28px;align-items:center;margin:0 0 8px}
+.about-intro .about-lead{margin:0}
+.about-intro .about-art{width:240px;margin:0}
+@media(max-width:800px){.about-intro{grid-template-columns:minmax(0,1fr)}.about-intro .about-art{order:-1;width:200px;margin:0 auto 8px}}
