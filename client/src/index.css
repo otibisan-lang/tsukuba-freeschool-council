@@ -274,7 +274,8 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .about-intro{display:grid;grid-template-columns:minmax(0,1fr) 240px;gap:28px;align-items:center;margin:0 0 8px}
 .about-intro .about-lead{margin:0}
 .about-intro .about-art{width:240px;margin:0}
-@media(max-width:800px){.about-intro{grid-template-columns:minmax(0,1fr)}.about-intro .about-art{order:0;width:min(300px,80%);margin:8px auto 0}}
+@media(max-width:800px){.about-intro{grid-template-columns:minmax(0,1fr)}.about-intro .about-art{order:0;width:min(300px,80%);margin:0 auto}
+.about-intro .about-lead{margin-bottom:0}}
 
 /* ページタイトルの下の一言(リード文): どのページも同じ見た目に */
 .sky-page main .simple-content .lead,.sky-page main .simple-content .parents-lead,.sky-page main .simple-content .about-lead{font-size:18px;font-weight:700;color:#111;line-height:1.8;margin:0 0 24px}
@@ -361,3 +362,4 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 /* 出張講師のタグ: キーワードと出張先の高さ・余白をそろえる */
 .lecturer-styles{align-items:center}
 .lecturer-styles .lecturer-style,.lecturer-styles .lecturer-keyword{margin:0;line-height:1.4;align-self:center;display:inline-block}
+@media(max-width:800px){.about-intro{gap:6px}.about-intro .about-lead{margin-bottom:0}}
