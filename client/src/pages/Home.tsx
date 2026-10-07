@@ -5,14 +5,14 @@ import { SHOW_FAQ } from "../config";
 
 const storageImage = "/assets/council-map.png";
 const schools = [
-  { name:"サドベリースクールつくば空", yomi:"さどべりーすくーるつくばそら", area:"つくば市春日", tone:"mint", comment:"個性を尊重し、共に育ちあう場。自ら実行することを大事にしています。やりたいことに没頭できる安心の空間です。", target:"小学生・中学生・高校生", site:"https://www.tsukuba-sora.com/" },
+  { name:"サドベリースクールつくば空", yomi:"さどべりーすくーるつくばそら", area:"つくば市春日", tone:"mint", comment:"子どもには、自ら育つ力が備わっています。一人ひとりの「らしさ」を大切にし、違いの中で自由と責任を学ぶスクールです。", target:"小学生・中学生・高校生", site:"https://www.tsukuba-sora.com/" },
   { name:"TSUKUBA学びの杜学園", yomi:"つくばまなびのもりがくえん", area:"つくば市吾妻", tone:"lime", comment:"子どもたちが自分のペースで安心して過ごせる学びの場。週5開校、送迎あり。ご相談は土日も受け付けています。", target:"小学生・中学生・高校生", site:"https://manabinomori-gakuen.com/" },
-  { name:"つくばフリースクールKimiiro", yomi:"つくばふりーすくーるきみいろ", area:"つくば市上ノ室", tone:"violet", comment:"「保護者満足度100%」古民家で、週4日開校しています。市外問わず通いやすいプランの用意あり。", target:"小学生・中学生・高校生", site:"https://freeschool-kimiiro.com/" },
+  { name:"つくばフリースクールKimiiro", yomi:"つくばふりーすくーるきみいろ", area:"つくば市上ノ室", tone:"violet", comment:"『保護者満足度100%』庭付きの古民家で、週4日開校しています。市外問わず通いやすいプランの用意あり。", target:"小学生・中学生・高校生", site:"https://freeschool-kimiiro.com/" },
   { name:"子ども社会塾", yomi:"こどもしゃかいじゅく", area:"つくば市竹園ほか・オンライン", tone:"gold", comment:"できる子より、“生き残れる子”へ。社会を生き抜く力を早くから習得するためのスクール。学校で教えないこと、教えます。", target:"小学生・中学生・高校生", site:"https://www.sjuku.jp/" },
   { name:"こどもとつくる学校でんでん", yomi:"こどもとつくるがっこうでんでん", area:"つくば市竹園", tone:"cyan", comment:"イエナプランを軸に、子どもの“やりたい”からはじまる生きた本物の学びを実践します。", target:"小学生・中学生（高校生は応相談）", site:"https://denden-alternativeschool.jimdofree.com/" },
-  { name:"fermi cafe", yomi:"ふぇるみかふぇ", area:"つくば市二の宮", tone:"purple", comment:"「話す・学ぶ・つながる」好きなことや気持ちに寄り添うサイエンスカフェ。実験講座やAI教室などのイベントも多数。", target:"子どもから大人まで", site:"https://sites.google.com/view/fermi-cafe/" },
-  { name:"つくば高等学院", yomi:"つくばこうとうがくいん", area:"つくば市二の宮", tone:"orange", comment:"自分のペースを大切にしながら、ITにも触れられます。ほっと過ごせるフリースクール・通信制高校サポート校。", target:"小学5年〜高校生", site:"https://tsukugaku.com/" },
-  { name:"ROBE学園", yomi:"ろーべがくえん", area:"つくば市緑が丘", tone:"brown", comment:"無学年教材で自分のペースで学べる、週3日開所のフリースクール。送迎あり。子ども食堂も利用可能です。", target:"小学生・中学生・高校生", site:"https://npo-robe.org/" },
+  { name:"fermi cafe", yomi:"ふぇるみかふぇ", area:"つくば市二の宮", tone:"purple", comment:"「話せる・学べる・居られる」好奇心と気持ちに寄り添うサイエンスカフェ。実験講座やAI教室などのイベントも多数。", target:"子どもから大人まで", site:"https://sites.google.com/view/fermi-cafe/" },
+  { name:"つくば高等学院", yomi:"つくばこうとうがくいん", area:"つくば市二の宮", tone:"orange", comment:"自分のペースを大切にしながら、ITにも触れられます。ほっと過ごせるフリースクール・通信制高校サポート校。", target:"小学5-6年・中学生・高校生", site:"https://tsukugaku.com/" },
+  { name:"ROBE学園", yomi:"ろーべがくえん", area:"つくば市緑が丘", tone:"brown", comment:"無学年教材で自分のペースで学べる、週3日開所のフリースクール。送迎あり。子ども食堂も利用可能です。", target:"小学生・中学生", site:"https://npo-robe.org/" },
   { name:"CoreDa!探究ラボ", yomi:"こあだたんきゅうらぼ", area:"つくば市春日", tone:"sky", comment:"子どもたちに豊かな体験を提供し、世の中の面白さと学びの楽しさを伝える習い事教室。2026年10月、新拠点オープンしました！", target:"小学生・中学生・高校生", site:"https://school.oneangle.jp/" },
   { name:"親子の居場所×フリースクール imakoko", yomi:"おやこのいばしょ", area:"つくばみらい市板橋", tone:"pink", comment:"不登校当事者の親子が運営しています。一人ひとりのペースで過ごせる、みんなの心が豊かになれる居場所を目指しています。", target:"小学生・中学生の親子", site:"#", insta:"https://www.instagram.com/imakoko_tsukubamirai/" },
 ];
