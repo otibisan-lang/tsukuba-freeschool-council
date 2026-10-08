@@ -392,3 +392,6 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 
 /* 参加スクールのカード: 名前を太字に */
 .school-body h3{font-weight:700}
+
+/* でんでんのカード: 説明文が短いので、下に余白を足して高さを合わせる */
+#denden .school-card-desktop .school-body p{margin-bottom:1.8em}
