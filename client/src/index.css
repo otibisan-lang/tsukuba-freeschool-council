@@ -388,7 +388,7 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .lecturer-notes .lecturer-note{margin:0}
 
 /* imakokoのカード: 名前が長いので、PCでは1行に収まるよう文字を小さく */
-#imakoko .school-card-desktop .school-body h3{font-size:16px}
+#imakoko .school-card-desktop .school-body h3{font-size:19px}
 
 /* 参加スクールのカード: 名前を太字に */
 .school-body h3{font-weight:700}
