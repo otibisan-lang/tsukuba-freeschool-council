@@ -395,3 +395,16 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 
 /* でんでんのカード: 説明文が短いので、下に余白を足して高さを合わせる */
 #denden .school-card-desktop .school-body p{margin-bottom:1.8em}
+
+/* 出張講師のアイコン: 大きくして見やすく */
+.lecturer-avatar{width:56px;height:56px;font-size:22px}
+.lecturer-head{gap:14px}
+@media(max-width:800px){.lecturer-avatar{width:44px;height:44px;font-size:17px}}
+
+/* 出張講師のアイコン: タップで画面いっぱいに表示 */
+.lecturer-avatar-trigger{flex:none;width:56px;height:56px;border-radius:50%;overflow:hidden;padding:0;cursor:zoom-in}
+.lecturer-avatar-trigger .image-viewer-thumb{width:100%;height:100%;object-fit:cover;display:block}
+@media(max-width:800px){.lecturer-avatar-trigger{width:44px;height:44px}}
+
+/* 講師アイコンの拡大表示: 元画像の大きさに関わらず、同じ上限サイズで表示する */
+.lecturer-lightbox img{max-width:min(85vw,420px);max-height:min(85vh,420px);border-radius:16px}

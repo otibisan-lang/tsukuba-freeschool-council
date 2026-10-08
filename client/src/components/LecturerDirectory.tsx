@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import ImageViewer from "./ImageViewer";
 
 // 講師募集フォームの回答シートを「ファイル > 共有 > ウェブに公開」で
 // CSV形式で発行したURLを設定してください。
@@ -145,7 +146,7 @@ function LecturerCard({ l }: { l: Lecturer }) {
       <div className="lecturer-core">
         <div className="lecturer-head">
           {l.iconUrl ? (
-            <img className="lecturer-avatar" src={l.iconUrl} alt={`${l.name}さん`} />
+            <ImageViewer src={l.iconUrl} alt={`${l.name}さん`} showShare={false} triggerClassName="lecturer-avatar-trigger" lightboxClassName="lecturer-lightbox" />
           ) : (
             <span className="lecturer-avatar" aria-hidden="true">{l.name.charAt(0)}</span>
           )}

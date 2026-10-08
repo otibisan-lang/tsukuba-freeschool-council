@@ -34,7 +34,7 @@ export function ShareButtons({ src, alt, shareText }: { src: string; alt: string
 }
 
 // 画像をそのまま表示し、タップすると画面いっぱいに表示する(拡大・移動はしない)
-export default function ImageViewer({ src, alt, shareText, showShare = true }: { src: string; alt: string; shareText?: string; showShare?: boolean }) {
+export default function ImageViewer({ src, alt, shareText, showShare = true, triggerClassName = "", lightboxClassName = "" }: { src: string; alt: string; shareText?: string; showShare?: boolean; triggerClassName?: string; lightboxClassName?: string }) {
   const [open, setOpen] = useState(false);
 
   useEffect(() => {
@@ -50,12 +50,12 @@ export default function ImageViewer({ src, alt, shareText, showShare = true }: {
 
   return (
     <>
-      <button type="button" className="image-viewer-trigger" onClick={() => setOpen(true)} aria-label={`${alt}を画面いっぱいに表示`}>
+      <button type="button" className={`image-viewer-trigger ${triggerClassName}`.trim()} onClick={() => setOpen(true)} aria-label={`${alt}を画面いっぱいに表示`}>
         <img className="image-viewer-thumb" src={src} alt={alt} loading="lazy" />
       </button>
       {showShare && <ShareButtons src={src} alt={alt} shareText={shareText} />}
       {open && (
-        <div className="image-lightbox" role="dialog" aria-modal="true" onClick={() => setOpen(false)}>
+        <div className={`image-lightbox ${lightboxClassName}`.trim()} role="dialog" aria-modal="true" onClick={() => setOpen(false)}>
           <img src={src} alt={alt} />
           <button type="button" className="image-lightbox-close" aria-label="閉じる" onClick={() => setOpen(false)}>×</button>
         </div>
