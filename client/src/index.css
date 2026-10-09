@@ -117,7 +117,7 @@ body{
 
 /* トップ: 空と雲は画面に固定し、コンテンツだけがスクロールする */
 .sky-page{background:none}
-.sky-fixed{position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:url(/assets/whitecloud.png),url(/assets/whitecloud.png),linear-gradient(180deg,#17A5F7 0%,#17A5F7 22%,#2BACF7 42%,#3FB4F7 58%,#51BAF9 70%,#65C2F9 80%,#79CAF9 90%,#9ED8F9 100%);background-repeat:no-repeat,no-repeat,no-repeat;background-position:right -260px top 4%,left -170px top 40%,center;background-size:520px auto,340px auto,100% 100%}
+.sky-fixed{position:fixed;top:0;left:0;right:0;bottom:-120px;z-index:-1;pointer-events:none;background-image:url(/assets/whitecloud.png),url(/assets/whitecloud.png),linear-gradient(180deg,#17A5F7 0%,#17A5F7 22%,#2BACF7 42%,#3FB4F7 58%,#51BAF9 70%,#65C2F9 80%,#79CAF9 90%,#9ED8F9 100%);background-repeat:no-repeat,no-repeat,no-repeat;background-position:right -260px top 4%,left -170px top 40%,center;background-size:520px auto,340px auto,100% 100%}
 /* ヘッダーも青に */
 .sky-page .site-header{background:linear-gradient(90deg,#17A5F7,#2BACF7);border-bottom:none;box-shadow:0 6px 18px rgba(14,100,160,.18)}
 .sky-page .site-header .brand b,.sky-page .site-header .brand small,.sky-page .site-header nav a{color:#fff}
