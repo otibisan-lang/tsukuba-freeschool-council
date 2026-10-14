@@ -197,9 +197,6 @@ body:has(.sky-page){background:#9ED8F9}
 
 /* 保護者の方へ: 読みやすさの調整 */
 .parents-lead{font-size:20px;font-weight:700;color:#111;line-height:1.7;margin:0 0 18px}
-.parents-intro{background:#fff;border-radius:16px;padding:20px 24px;margin:0 0 26px}
-.parents-intro p{font-size:14px;line-height:2;margin:0 0 12px;color:#111}
-.parents-intro p:last-child{margin-bottom:0}
 .support-grid{gap:20px}
 .support-card{background:#fff;border:1px solid #d6e9f1;box-shadow:0 10px 24px rgba(14,100,160,.10);display:flex;flex-direction:column}
 .support-card.blue{background:#f3fbfe}.support-card.peach{background:#fff5ef;border-color:#f7d9c8}
@@ -208,10 +205,11 @@ body:has(.sky-page){background:#9ED8F9}
 .support-card.peach .support-icon{background:#FF7F0E}
 .support-no{font:700 13px 'DM Sans';color:#8a9aa3;letter-spacing:.08em}
 .support-card h2{font-size:19px;line-height:1.5;margin:0 0 12px}
+.support-grid .support-card h2{border-left:none;padding-left:0;font-size:19px;line-height:1.5;margin:0 0 12px}
 .support-card p{font-size:14px;line-height:1.9;color:#111;margin:0 0 10px}
 .support-card .check-list{margin:6px 0 16px}
 .support-card .button-outline{margin-top:auto;align-self:flex-start}
-@media(max-width:800px){.parents-lead{font-size:18px}.parents-intro{padding:18px 18px}}
+@media(max-width:800px){.parents-lead{font-size:18px}}
 
 /* ヘッダー: 英語の表記を消し、スクロール時は寄附・会員登録を囲みなしの文字に */
 .is-scrolled .sky-page .brand small{display:none}
@@ -220,11 +218,7 @@ body:has(.sky-page){background:#9ED8F9}
 .is-scrolled .sky-page .header-actions .header-cta:hover,.is-scrolled .sky-page .header-actions .header-cta-outline:hover{background:none;color:#FFD54F;transform:none}
 
 /* イラストの配置 */
-.parents-intro-wrap{display:grid;grid-template-columns:minmax(0,1fr) 210px;gap:24px;align-items:center;margin:0 0 26px}
-.parents-intro-wrap .parents-intro{margin:0}
-.parents-art{display:block;width:210px;height:auto}
 .join-art{display:block;width:min(400px,90%);height:auto;margin:0 auto 24px}
-@media(max-width:800px){.parents-intro-wrap{grid-template-columns:minmax(0,1fr)}.parents-art{order:-1;width:170px;margin:0 auto}}
 
 /* 出張講師: 黄色いカードの横にイラスト */
 .side-art-wrap{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:24px;align-items:center;margin:20px 0 14px}
