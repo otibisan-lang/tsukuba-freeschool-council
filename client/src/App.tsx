@@ -13,6 +13,7 @@ import ImageViewer from "./components/ImageViewer";
 import LecturerDirectory from "./components/LecturerDirectory";
 
 const letterArchive = [
+  { ym: "2026-10", label: "2026年10月号", pickup: { school: "子ども社会塾", url: "https://note.com/tfc298/n/n715b43550966" } },
   { ym: "2026-09", label: "2026年9月号", pickup: { school: "fermi cafe", url: "https://note.com/tfc298/n/n7c701ccf9ec2" } },
   { ym: "2026-08", label: "2026年8月号", pickup: { school: "つくばフリースクールKimiiro", url: "https://note.com/tfc298/n/nb3d0f361f44c" } },
   { ym: "2026-07", label: "2026年7月号" },
