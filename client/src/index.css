@@ -371,6 +371,8 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .parents-advice-intro+.parents-advice-intro{margin-top:14px}
 .parents-advice .faq-item summary span{font-size:20px;font-weight:700}
 .parents-advice-closing{margin-top:30px;line-height:2;color:var(--muted);font-size:14px}
+.design-note{font-size:14px;line-height:1.9;color:var(--muted)}
+.design-note+.design-note{margin-top:20px}
 .parents-advice-credit{margin-top:20px;font-size:12px;color:var(--muted);text-align:right}
 
 /* 出張講師ページ: 参加スクールと同じく、3列に並べられるように幅を広げる */
