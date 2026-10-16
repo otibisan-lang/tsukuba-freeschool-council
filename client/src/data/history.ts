@@ -2,6 +2,7 @@ export type HistoryEntry = { date: string; text: string };
 
 // 新しい更新ほど先頭に追加してください(date は YYYY-MM-DD)
 export const historyEntries: HistoryEntry[] = [
+  { date: "2026-10-16", text: "たよりを11月号に更新、保護者の方へページに「知っておいてほしい10のこと」を追加、よくある質問ページを終了" },
   { date: "2026-10-10", text: "本公開（旧サイトから移転）" },
   { date: "2026-10-06", text: "サイトのプレ公開、出張講師の募集開始" },
 ];
