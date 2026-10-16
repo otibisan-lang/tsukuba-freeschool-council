@@ -372,7 +372,12 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .parents-advice .faq-item summary span{font-size:20px;font-weight:700}
 .parents-advice-closing{margin-top:30px;line-height:2;color:var(--muted);font-size:14px}
 .design-note{font-size:14px;line-height:1.9;color:var(--muted)}
-.design-note+.design-note{margin-top:20px}
+.design-row{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:24px;align-items:start}
+.design-row+.design-row{margin-top:20px}
+.design-row .design-note{margin:0}
+.design-art{width:150px;height:auto;display:block}
+.design-logo{width:110px;height:auto;display:block;margin:0 auto}
+@media(max-width:800px){.design-row{grid-template-columns:minmax(0,1fr)}.design-art,.design-logo{order:-1;width:min(180px,55%);margin:0 auto}}
 .parents-advice-credit{margin-top:20px;font-size:12px;color:var(--muted);text-align:right}
 
 /* 出張講師ページ: 参加スクールと同じく、3列に並べられるように幅を広げる */
