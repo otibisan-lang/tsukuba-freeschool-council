@@ -29,7 +29,7 @@
 .faq-item p{line-height:1.9;font-size:13px}.faq-item summary span{min-width:32px}
 .advice-links{list-style:none;margin:10px 0 0;padding-left:42px}
 .advice-links li{margin:4px 0}
-.advice-links a{font-size:13px;font-weight:700;color:var(--coral)}
+.advice-links a{font-size:13px;font-weight:700;color:#111}
 .advice-links a:hover{text-decoration:underline}
 
 /* Keep the location pin to the left of the place name on every school card. */
