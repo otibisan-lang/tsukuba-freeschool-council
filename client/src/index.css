@@ -27,7 +27,7 @@
 @media(max-width:600px){.lecturer-grid{grid-template-columns:1fr}}
 
 .faq-item p{line-height:1.9;font-size:13px}.faq-item summary span{min-width:32px}
-.advice-links{list-style:none;margin:10px 0 0;padding-left:42px}
+.advice-links{list-style:none;margin:10px 0 0 42px;padding:14px 18px;border:1px solid #dde5ea;border-radius:12px;background:#f7fafc}
 .advice-links li{margin:4px 0;font-size:13px}
 .advice-links a{font-size:13px;font-weight:700;color:#111}
 .advice-links a:hover{text-decoration:underline}
