@@ -12,11 +12,11 @@ export const historyEntries: HistoryEntry[] = [
     ["たよりを11月号に更新"],
   ] },
   { date: "2026-10-10", items: [["本公開（旧サイトから移転）"]] },
-  { date: "2026-10-06", items: [["サイトのプレ公開、出張講師の募集開始"]] },
+  { date: "2026-10-06", items: [["サイトのプレ公開、", { text: "出張講師", href: "/lecturers" }, "の募集開始"]] },
 ];
 
 export function formatDateSlash(iso: string): string {
-  const [y, m, d] = iso.split("-").map(Number);
+  const [y, m, d] = iso.split("-");
   return `${y}/${m}/${d}`;
 }
 
