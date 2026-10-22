@@ -26,7 +26,7 @@
 .lecturer-pdf{color:var(--teal);font-weight:700}
 @media(max-width:600px){.lecturer-grid{grid-template-columns:1fr}}
 
-.faq-disclaimer{background:#e8f3f5;border-radius:12px;padding:16px 18px;margin:30px 0 38px;color:#547273;font-size:12px;line-height:1.8}.faq-group{margin:38px 0}.faq-group h2{font-size:20px;color:var(--teal);border-left:5px solid var(--coral);padding-left:12px;margin-bottom:16px}.faq-item p{line-height:1.9;font-size:13px}.faq-item summary span{min-width:32px}
+.faq-item p{line-height:1.9;font-size:13px}.faq-item summary span{min-width:32px}
 
 /* Keep the location pin to the left of the place name on every school card. */
 .school-card .card-meta>span:nth-child(2){display:inline-flex;align-items:center;gap:4px;white-space:nowrap;line-height:1.2}.school-card .card-meta>span:nth-child(2) svg{flex:0 0 auto;display:block}
@@ -90,7 +90,7 @@ body{
   background-size:520px auto,340px auto;
   background-attachment:fixed,fixed;
 }
-.site-page{background:rgba(234,248,252,.18)}.site-header{background:rgba(255,255,255,.88)}.brand-logo{width:52px;height:52px;display:block;object-fit:contain}.footer-brand .brand-logo{width:52px;height:52px}.header-cta,.button-primary{background:#FF7F0E;color:#fff}.header-cta:hover,.button-primary:hover{background:#e96f05}.hero h1 em,.section-heading h2 em{color:#FF7F0E}.hero h1 em:after{background:#FFD54F}.eyebrow,.count,.quick-no{color:#FF7F0E}.quick{background:#DDF3E5}.quick-label b,.quick strong,.school-tags a,.text-link{color:#243746}.school-card{background:#fff;border-color:#d7eaf0}.map-note{background:#FFF7D7}.closing{background:#DDF3E5}.support-card.blue{background:#DDF3E5}.support-card.peach{background:#FFE5DF}.faq-group h2{color:#243746;border-left-color:#FF7F0E}.notice-card{background:#FFF7D7}.footer-brand .brand-mark{display:none}
+.site-page{background:rgba(234,248,252,.18)}.site-header{background:rgba(255,255,255,.88)}.brand-logo{width:52px;height:52px;display:block;object-fit:contain}.footer-brand .brand-logo{width:52px;height:52px}.header-cta,.button-primary{background:#FF7F0E;color:#fff}.header-cta:hover,.button-primary:hover{background:#e96f05}.hero h1 em,.section-heading h2 em{color:#FF7F0E}.hero h1 em:after{background:#FFD54F}.eyebrow,.count,.quick-no{color:#FF7F0E}.quick{background:#DDF3E5}.quick-label b,.quick strong,.school-tags a,.text-link{color:#243746}.school-card{background:#fff;border-color:#d7eaf0}.map-note{background:#FFF7D7}.closing{background:#DDF3E5}.support-card.blue{background:#DDF3E5}.support-card.peach{background:#FFE5DF}.notice-card{background:#FFF7D7}.footer-brand .brand-mark{display:none}
 .hero-actions .button-primary{background:#fff;color:#FF7F0E;border:1.5px solid #FF7F0E}.hero-actions .button-primary:hover{background:#FF7F0E;color:#fff}
 
 .filter-tags button{font:inherit;font-size:11px;border:1px solid #bed3c9;padding:7px 12px;border-radius:99px;background:rgba(255,255,255,.8);color:var(--ink);cursor:pointer;transition:background .2s,color .2s,border-color .2s}.filter-tags button:hover,.filter-tags button.active{background:#FF7F0E;color:#fff;border-color:#FF7F0E}
@@ -367,9 +367,17 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .join-cities{display:inline-block;margin-top:4px;font-size:14px;color:#111}
 .join-fee{font-size:22px;font-weight:700;color:#111;margin:18px 0;padding:6px 0}
 .donation-method-sub{margin-top:28px}
-.parents-advice{margin:38px 0}
+.parents-advice-intro{font-size:14px;line-height:2;color:var(--muted)}
+.parents-advice-intro+.parents-advice-intro{margin-top:14px}
 .parents-advice .faq-item summary span{font-size:20px;font-weight:700}
 .parents-advice-closing{margin-top:30px;line-height:2;color:var(--muted);font-size:14px}
+.design-note{font-size:14px;line-height:1.9;color:var(--muted)}
+.design-row{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:24px;align-items:start}
+.design-row+.design-row{margin-top:20px}
+.design-row .design-note{margin:0}
+.design-art{width:150px;height:auto;display:block}
+.design-logo{width:110px;height:auto;display:block;margin:0 auto}
+@media(max-width:800px){.design-row{grid-template-columns:minmax(0,1fr)}.design-art,.design-logo{order:-1;width:min(180px,55%);margin:0 auto}}
 .parents-advice-credit{margin-top:20px;font-size:12px;color:var(--muted);text-align:right}
 
 /* 出張講師ページ: 参加スクールと同じく、3列に並べられるように幅を広げる */
