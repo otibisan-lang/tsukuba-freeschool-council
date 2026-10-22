@@ -33,7 +33,7 @@ const parentAdvice:[string,string,ParentAdviceLink[]?][]=[
    {muni:"土浦市",href:"https://www.city.tsuchiura.lg.jp/",facilities:"土浦市教育相談室、適応指導教室「ポプラひろば」"},
    {muni:"つくばみらい市",href:"https://www.city.tsukubamirai.lg.jp/future/edu-center/introduction/page001380.html",facilities:"適応支援教室「なのはな」"},
    {muni:"牛久市",href:"https://www.city.ushiku.lg.jp/",facilities:"牛久市教育センター「きぼうの広場」"},
-   {muni:"常総市",href:"https://www.city.joso.lg.jp/",facilities:"教育相談窓口"},
+   {muni:"常総市",href:"https://www.city.joso.lg.jp/kurashi_gyousei/kurashi/soudan_service/kosodatekyouiku/page001080.html",facilities:"教育相談「かしのきスクール」"},
    {muni:"下妻市",href:"https://www.city.shimotsuma.lg.jp/",facilities:"下妻市青少年センター"},
    {muni:"筑西市",href:"https://www.city.chikusei.lg.jp/",facilities:"筑西市教育支援センター、筑西市青少年センター"},
    {muni:"桜川市",href:"https://www.city.sakuragawa.lg.jp/",facilities:"桜川市教育委員会教育指導課"},
