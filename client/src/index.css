@@ -374,7 +374,8 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .parents-advice-intro{font-size:14px;line-height:2;color:var(--muted)}
 .parents-advice-intro+.parents-advice-intro{margin-top:14px}
 .parents-advice .faq-item summary span{font-size:20px;font-weight:700}
-.parents-advice-closing{margin-top:30px;line-height:2;color:var(--muted);font-size:14px}
+.parents-advice-subhead{margin-top:30px;font-size:18px;color:#111}
+.parents-advice-closing{margin-top:10px;line-height:2;color:var(--muted);font-size:14px}
 .design-note{font-size:14px;line-height:1.9;color:var(--muted)}
 .design-row{display:grid;grid-template-columns:minmax(0,1fr) 150px;gap:24px;align-items:start}
 .design-row+.design-row{margin-top:20px}
