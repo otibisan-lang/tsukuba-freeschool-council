@@ -5,17 +5,17 @@ import { latestUpdate, formatDateSlash } from "../data/history";
 
 const storageImage = "/assets/council-map.png";
 const schools = [
-  { name:"サドベリースクールつくば空", yomi:"さどべりーすくーるつくばそら", area:"つくば市春日", tone:"mint", comment:"子どもには、自ら育つ力が備わっています。一人ひとりの「らしさ」を大切にし、違いの中で自由と責任を学ぶスクールです。", target:"小学生・中学生・高校生", site:"https://www.tsukuba-sora.com/" },
-  { name:"TSUKUBA学びの杜学園", yomi:"つくばまなびのもりがくえん", area:"つくば市吾妻", tone:"lime", comment:"子どもたちが自分のペースで安心して過ごせる学びの場。週5開校、送迎あり。ご相談は土日も受け付けています。", target:"小学生・中学生・高校生", site:"https://manabinomori-gakuen.com/" },
-  { name:"つくばフリースクールKimiiro", yomi:"つくばふりーすくーるきみいろ", area:"つくば市上ノ室", tone:"violet", comment:"「保護者満足度100%」庭付きの古民家で、週4日開校しています。市外問わず通いやすいプランの用意あり。", target:"小学生・中学生・高校生", site:"https://freeschool-kimiiro.com/" },
-  { name:"子ども社会塾", yomi:"こどもしゃかいじゅく", area:"つくば市竹園・自由ケ丘・秋葉原・オンライン", tone:"gold", comment:"できる子より、“生き残れる子”へ。社会を生き抜く力を早くから習得するためのスクール。学校で教えないこと、教えます。", target:"小学生・中学生・高校生", site:"https://www.sjuku.jp/" },
-  { name:"こどもとつくる学校でんでん", yomi:"こどもとつくるがっこうでんでん", area:"つくば市竹園", tone:"cyan", comment:"イエナプランを軸に、こどもの“やりたい”からはじまる、生きた本物の学びを実践します。", target:"小学生・中学生(高校生は応相談)", site:"https://denden-alternativeschool.jimdofree.com/" },
-  { name:"fermi cafe", yomi:"ふぇるみかふぇ", area:"つくば市二の宮", tone:"purple", comment:"「話せる・学べる・居られる」好奇心と気持ちに寄り添うサイエンスカフェ。実験講座やAI教室などのイベントも多数。", target:"子どもから大人まで", site:"https://sites.google.com/view/fermi-cafe/" },
-  { name:"つくば高等学院", yomi:"つくばこうとうがくいん", area:"つくば市二の宮", tone:"orange", comment:"自分のペースを大切にしながら、ITにも触れられます。ほっと過ごせるフリースクール・通信制高校サポート校。", target:"小学5-6年・中学生・高校生", site:"https://tsukugaku.com/" },
-  { name:"ROBE学園", yomi:"ろーべがくえん", area:"つくば市緑が丘", tone:"brown", comment:"無学年教材で自分のペースで学べる、週3日開所のフリースクール。送迎あり。子ども食堂も利用可能です。", target:"小学生・中学生", site:"https://npo-robe.org/" },
-  { name:"CoreDa!探究ラボ", yomi:"こあだたんきゅうらぼ", area:"つくば市春日", tone:"sky", comment:"子どもたちに豊かな体験を提供し、世の中の面白さと学びの楽しさを伝える習い事教室。2026年10月、新拠点オープンしました！", target:"小学生・中学生・高校生", site:"https://school.oneangle.jp/" },
-  { name:"親子の居場所×フリースクール imakoko", yomi:"おやこのいばしょ", area:"つくばみらい市板橋", tone:"pink", comment:"不登校当事者の親子が運営しています。一人ひとりのペースで過ごせる、みんなの心が豊かになれる居場所を目指しています。", target:"小学生・中学生の親子", site:"#", insta:"https://www.instagram.com/imakoko_tsukubamirai/" },
-  { name:"つくばヘレナ高等学院ヘレナ中等部", yomi:"つくばへれなこうとうがくいんへれなちゅうとうぶ", area:"つくば市東新井", tone:"teal", comment:"ヘレナ英会話スクール内のフリースクール・通信制高校サポート校。学び直しや英語学習、体験活動など。", target:"小学生(高学年)から高校生", site:"https://www.edu-helena.com/" },
+  { name:"サドベリースクールつくば空", yomi:"さどべりーすくーるつくばそら", area:"つくば市春日", tone:"mint", comment:`子どもには、自ら育つ力が備わっています。\n一人ひとりの「らしさ」を大切にし\n違いの中で自由と責任を学ぶスクールです。`, target:"小学生・中学生・高校生", site:"https://www.tsukuba-sora.com/" },
+  { name:"TSUKUBA学びの杜学園", yomi:"つくばまなびのもりがくえん", area:"つくば市吾妻", tone:"lime", comment:`子どもたちが自分のペースで安心して\n過ごせる学びの場。週5開校、送迎あり。\nご相談は土日も受け付けています。`, target:"小学生・中学生・高校生", site:"https://manabinomori-gakuen.com/" },
+  { name:"つくばフリースクールKimiiro", yomi:"つくばふりーすくーるきみいろ", area:"つくば市上ノ室", tone:"violet", comment:`『保護者満足度100%』\n庭付きの古民家で、週4日開校しています。\n市外問わず通いやすいプランの用意あり。`, target:"小学生・中学生・高校生", site:"https://freeschool-kimiiro.com/" },
+  { name:"子ども社会塾", yomi:"こどもしゃかいじゅく", area:"つくば市竹園・自由ケ丘・秋葉原・オンライン", tone:"gold", comment:`できる子より、“生き残れる子”へ。\n社会を生き抜く力を早くから習得するための\nスクール。学校で教えないこと、教えます。`, target:"小学生・中学生・高校生", site:"https://www.sjuku.jp/" },
+  { name:"こどもとつくる学校でんでん", yomi:"こどもとつくるがっこうでんでん", area:"つくば市竹園", tone:"cyan", comment:`イエナプランを軸に、\n子どもの“やりたい”からはじまる\n生きた本物の学びを実践します。`, target:"小学生・中学生(高校生は応相談)", site:"https://denden-alternativeschool.jimdofree.com/" },
+  { name:"fermi cafe", yomi:"ふぇるみかふぇ", area:"つくば市二の宮", tone:"purple", comment:`「話せる・学べる・居られる」\n好奇心と気持ちに寄り添うサイエンスカフェ。\n実験講座やAI教室などのイベントも多数。`, target:"子どもから大人まで", site:"https://sites.google.com/view/fermi-cafe/" },
+  { name:"つくば高等学院", yomi:"つくばこうとうがくいん", area:"つくば市二の宮", tone:"orange", comment:`自分のペースを大切にしながら、\nITにも触れられます。ほっと過ごせる\nフリースクール・通信制高校サポート校。`, target:"小学5-6年・中学生・高校生", site:"https://tsukugaku.com/" },
+  { name:"ROBE学園", yomi:"ろーべがくえん", area:"つくば市緑が丘", tone:"brown", comment:`無学年教材で自分のペースで学べる、\n週3日開所のフリースクール。\n送迎あり。子ども食堂も利用可能です。`, target:"小学生・中学生", site:"https://npo-robe.org/" },
+  { name:"CoreDa!探究ラボ", yomi:"こあだたんきゅうらぼ", area:"つくば市春日", tone:"sky", comment:`子どもたちに豊かな体験を提供し、世の中の\n面白さと学びの楽しさを伝える習い事教室です。\n2026年10月、新拠点オープンしました！`, target:"小学生・中学生・高校生", site:"https://school.oneangle.jp/" },
+  { name:"親子の居場所×フリースクール imakoko", yomi:"おやこのいばしょ", area:"つくばみらい市板橋", tone:"pink", comment:`不登校当事者の親子が運営しています。\n一人ひとりのペースで過ごせる、みんなの\n心が豊かになれる居場所を目指しています。`, target:"小学生・中学生の親子", site:"#", insta:"https://www.instagram.com/imakoko_tsukubamirai/" },
+  { name:"つくばヘレナ高等学院ヘレナ中等部", yomi:"つくばへれなこうとうがくいんへれなちゅうとうぶ", area:"つくば市東新井", tone:"teal", comment:`ヘレナ英会話スクール内の\nフリースクール・通信制高校サポート校。\n学び直しや英語学習、体験活動など。`, target:"小学生(高学年)から高校生", site:"https://www.edu-helena.com/" },
 ];
 
 function Header(){const [open,setOpen]=useState(false); return <header className="site-header"><a href="/" className="brand"><img className="brand-logo" src="/assets/council-logo.png" alt="つくばフリースクール等連携協議会"/><span><b>つくばフリースクール等連携協議会</b><small>TSUKUBA FREE SCHOOL NETWORK</small></span></a><button className="mobile-toggle" onClick={()=>setOpen(!open)}>{open?<X/>:<Menu/>}</button><nav className={open?"open":""}><a href="#schools" onClick={()=>setOpen(false)}>参加スクール</a><a href="/lecturers">出張講師</a><a href="/parents">保護者の方へ</a><a href="/about">協議会とは</a><div className="nav-cta-mobile"><a className="header-cta" href="/donation">寄附をする</a><a className="header-cta header-cta-outline" href="/join">会員登録</a></div></nav><div className="header-actions"><a className="header-cta" href="/donation">寄附をする</a><a className="header-cta header-cta-outline" href="/join">会員登録</a></div></header>}

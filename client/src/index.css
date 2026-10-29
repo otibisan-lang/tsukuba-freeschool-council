@@ -257,14 +257,14 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 /* 参加スクール一覧: カードの文字を一回り大きく */
 .school-card .card-meta{font-size:12px}
 .school-card h3,.school-body h3{font-size:20px}
-.school-body p{font-size:13px;line-height:1.8;min-height:0}
+.school-body p{font-size:13px;line-height:1.8;min-height:0;white-space:pre-line}
 .school-tags span{font-size:12px}
 
 /* 本文の直後のボタン: 段落との間に余白 */
 .sky-page main .simple-content p + a.button,.sky-page main .simple-content p + a.button-primary,.sky-page main .simple-content p + a.button-outline,.block-page p + a.button,.block-page p + a.button-primary,.block-page p + a.button-outline{margin-top:20px}
 
 /* 参加スクール一覧: 元の指定より強く効かせて、文字をさらに大きく */
-.school-card .school-body p{font-size:14px;line-height:1.8;min-height:0}
+.school-card .school-body p{font-size:14px;line-height:1.8;min-height:0;white-space:pre-line}
 .school-card .card-meta{font-size:13px}
 .school-card .school-tags span{font-size:13px}
 .school-card .school-body h3{font-size:21px}
@@ -326,7 +326,7 @@ main p a:not([class]),main li a:not([class]){text-decoration:underline dotted;te
 .school-mobile-name{grid-column:1;font-size:17px;font-weight:700;line-height:1.4}
 .school-mobile-chevron{grid-column:2;grid-row:1 / span 2;font-size:24px;font-weight:700;color:#FF7F0E}
 .school-mobile-body{padding:0 16px 16px;border-top:1px dashed #d7eaf0}
-.school-mobile-body p{font-size:14px;line-height:1.8;color:#111;margin:14px 0 10px}
+.school-mobile-body p{font-size:14px;line-height:1.8;color:#111;margin:14px 0 10px;white-space:pre-line}
 .school-mobile-body .school-tags{margin:0 0 14px}
 }
 .school-site-link{display:inline-block;font-size:13px;font-weight:700;color:#111;text-decoration:underline dotted;text-decoration-thickness:1.5px;text-underline-offset:4px}
