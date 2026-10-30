@@ -5,6 +5,7 @@ export type HistoryEntry = { date: string; items: HistorySegment[][] };
 // items の各要素は1行分。文字列と { text, href } を混ぜて、リンクにしたい部分だけ { text, href } にできます
 export const historyEntries: HistoryEntry[] = [
   { date: "2026-10-30", items: [
+    ["協議会に、", { text: "つくばヘレナ高等学院ヘレナ中等部", href: "/" }, "が新しく加入"],
     ["「", { text: "三つ折りパンフレット", href: "/documents/pamphlet.pdf" }, "」を、つくばヘレナ高等学院を追加したバージョンに更新"],
   ] },
   { date: "2026-10-25", items: [
