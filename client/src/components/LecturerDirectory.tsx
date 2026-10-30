@@ -18,6 +18,7 @@ interface Lecturer {
   pdfUrl: string;
   iconUrl: string;
   postedOn: string;
+  ts: number;
 }
 
 // ダブルクォート内のカンマ・改行に対応した簡易CSVパーサー
@@ -115,9 +116,8 @@ function parseLecturers(csvText: string): Lecturer[] {
   withOrder.sort((a, b) => b.ts - a.ts || b.i - a.i);
 
   return withOrder
-    .map(({ r }) => r)
-    .filter((r) => get(r, col.approved) !== "")
-    .map((r) => ({
+    .filter(({ r }) => get(r, col.approved) !== "")
+    .map(({ r, ts }) => ({
       name: get(r, col.name),
       title: get(r, col.title),
       keyword: get(r, col.keyword),
@@ -129,6 +129,7 @@ function parseLecturers(csvText: string): Lecturer[] {
       pdfUrl: get(r, col.pdf) ? `/lecturer-pdfs/${encodeURIComponent(get(r, col.pdf))}` : "",
       postedOn: formatPostedDate(get(r, col.timestamp)),
       iconUrl: get(r, col.icon) ? `/lecturer-icons/${encodeURIComponent(get(r, col.icon))}` : "",
+      ts,
     }))
     .filter((l) => l.name !== "");
 }
@@ -202,6 +203,7 @@ export default function LecturerDirectory() {
   const [lecturers, setLecturers] = useState<Lecturer[]>([]);
   const [keyword, setKeyword] = useState<string | null>(null);
   const [styleFilter, setStyleFilter] = useState<string | null>(null);
+  const [sortOrder, setSortOrder] = useState<"new" | "old">("new");
   // 10件ずつ表示する(「もっと見る」で増える)
   const [shownCount, setShownCount] = useState(10);
 
@@ -255,7 +257,8 @@ export default function LecturerDirectory() {
   const styleList = Array.from(styleCounts.keys()).sort((a, b) => a.localeCompare(b, "ja"));
   const filtered = lecturers
     .filter((l) => (keyword ? splitKeywords(l.keyword).includes(keyword) : true))
-    .filter((l) => (styleFilter ? splitKeywords(l.style).includes(styleFilter) : true));
+    .filter((l) => (styleFilter ? splitKeywords(l.style).includes(styleFilter) : true))
+    .sort((a, b) => (sortOrder === "new" ? b.ts - a.ts : a.ts - b.ts));
   const isFiltered = keyword !== null || styleFilter !== null;
   const visible = filtered.slice(0, shownCount);
 
@@ -305,6 +308,23 @@ export default function LecturerDirectory() {
           ))}
         </div>
       )}
+      <div className="keyword-filter sort-order" role="group" aria-label="並び替え">
+        <span className="filter-label">並び替え：</span>
+        <button
+          type="button"
+          className={`keyword-chip${sortOrder === "new" ? " active" : ""}`}
+          onClick={() => setSortOrder("new")}
+        >
+          新しい順
+        </button>
+        <button
+          type="button"
+          className={`keyword-chip${sortOrder === "old" ? " active" : ""}`}
+          onClick={() => setSortOrder("old")}
+        >
+          古い順
+        </button>
+      </div>
       <p className="keyword-count">
         {isFiltered
           ? `該当の講師は${filtered.length}人です(掲載中は全${lecturers.length}人)`
