@@ -4,6 +4,9 @@ export type HistoryEntry = { date: string; items: HistorySegment[][] };
 // 新しい更新ほど先頭に追加してください(date は YYYY-MM-DD)
 // items の各要素は1行分。文字列と { text, href } を混ぜて、リンクにしたい部分だけ { text, href } にできます
 export const historyEntries: HistoryEntry[] = [
+  { date: "2026-11-16", items: [
+    ["たよりを12月号に更新"],
+  ] },
   { date: "2026-11-14", items: [
     ["協議会に、", { text: "NIJINアカデミー茨城下妻校", href: "/" }, "が新しく加入"],
   ] },
