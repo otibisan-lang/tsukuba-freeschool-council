@@ -10,6 +10,9 @@ export const historyEntries: HistoryEntry[] = [
   { date: "2026-11-14", items: [
     ["協議会に、", { text: "NIJINアカデミー茨城下妻校", href: "/" }, "が新しく加入"],
   ] },
+  { date: "2026-11-12", items: [
+    ["「", { text: "出張講師", href: "/lecturers" }, "」に、菊地英宏さんを追加"],
+  ] },
   { date: "2026-10-30", items: [
     ["協議会に、", { text: "つくばヘレナ高等学院ヘレナ中等部", href: "/" }, "が新しく加入"],
     ["「", { text: "三つ折りパンフレット", href: "/documents/pamphlet.pdf" }, "」を、つくばヘレナ高等学院を追加したバージョンに更新"],
